@@ -1,6 +1,8 @@
+import { saveUser } from "../../../utils/localStorage";
 import type { IUser } from "../../../types/IUser";
 import type { Rol } from "../../../types/Rol";
 import { navigate } from "../../../utils/navigate";
+
 
 const loginForm = document.getElementById("form") as HTMLFormElement;
 const emailInput = document.getElementById("email") as HTMLInputElement;
@@ -26,7 +28,7 @@ loginForm.addEventListener("submit", (e: SubmitEvent) => {
     role,
     loggedIn: true,
   };
-
+  saveUser(user);
   if (user.role === "admin") {
     navigate("/src/pages/admin/home/home.html");
   } else if (user.role === "client") {
