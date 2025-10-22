@@ -9,37 +9,33 @@
 </head>
 
 <body>
-    <header><img src="logo_negro.svg" alt="logo" width="198px"></header>
+    <header>
+        <img class="logo" src="logo_negro.svg" alt="logo" width="150px">
+    </header>
     <main>
     <section class="TarjetaL">
-        <h2>login</h2>
-        <form id="form">
-            <article>
-                <label for="email">Email</label>
-                <input id="email" name="email" autocomplete="off" type="email" placeholder="example@example.com"
+       <nav class="TitulosRyL">
+        <a class="TituloL" href="login.html">INICIAR SESIÓN</a>
+        <a class="TituloR" href="../register/register.html">REGISTRARSE</a>
+       </nav>
+        <form id="form" class="formulario">
+            <article class="mainbox">
+                <label class="Titulosboxs" for="email">Email</label>
+                <input class="box" name="email" autocomplete="off" type="email" placeholder="example@example.com"
                     required></input>
             </article>
-            <article>
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" placeholder="**********" required></input>
-            </article>
-            <article>
-                <label>Rol</label>
-                <select id="role">
-                    <option value="">Seleccione un rol</option>
-                    <option value="admin">Admin</option>
-                    <option value="client">Cliente</option>
-                </select>
+            <article class="mainbox">
+                <label class="Titulosboxs" for="password">Contraseña</label>
+                <input class="box" id="password" name="password" type="password" placeholder="**********" required></input>
             </article>
 
-            <button type="submit">
-                Send
+            <button class="Boton" type="submit">
+                INICIAR SESIÓN
             </button>
         </form>
     </section>
     </main>
     <script type="module" src="./login.ts"></script>
-    <div class="Pan"></div>
 </body>
 
 </html>

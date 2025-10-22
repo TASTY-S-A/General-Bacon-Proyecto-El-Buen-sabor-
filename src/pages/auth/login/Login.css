@@ -11,7 +11,7 @@
     --Cfondo: #431000; 
     --Qfondo: #EEC307;
     --Tfondo: #B13904;
-    --Pfondo: #FE8C78;
+    --Pfondo: #FEA778;
     --Primary100: #FFEECB;
     --BotonRyL: #FA7159; /*Boton que es para el momento de crar o inciar sesión*/
     --BotonRoL: #E9DBBF; /*Boron para elegir si iniciar sesión o registrarse*/
@@ -24,8 +24,8 @@ body {
   height: 100vh;
   background: linear-gradient(
     to bottom,
-    var(--Pfondo) 15%,   
-    var(--Lfondo) 15%,   
+    var(--Pfondo) 16%,   
+    var(--Lfondo) 16%,   
     var(--Lfondo) 28%,   
     var(--Cfondo) 28%,   
     var(--Cfondo) 41%,   
@@ -44,32 +44,97 @@ body {
   
 }
 
-/* LOGO */
+/* HEADER y LOGO */
+
+header{
+  padding: 0.1%;
+  transform: translateY(-7px);
+}
 
 .logo{
-  width: 20px;   
+  padding-top: 0.3%;
+  width: 8%;
   height: auto;
   display: block;
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
 }
 
 /* TARJETA DE INICIO DE SESIÓN */
 
 .TarjetaL{
 margin: 0 auto;
-height: 829px;
-width: 637.69px;
+width: 40rem;
 background: var(--Primary100);
 border-radius: 20px;
 box-shadow: 15px 10px 4px 3px rgb(0, 0, 0,0.25);
-padding: 20px;
-transform: translateY(40px);
-display: flex;
+padding: 1%;
+transform: translateY(-4px);
+display: flexbox;
 justify-content: center; /* centra horizontal */
 align-items: center; 
 }
 
+/* TITULOS REGISTER Y LOGIN*/
+
+.TitulosRyL{
+  display: flex;
+  align-items: flex-start;
+  justify-content : space-around;
+  padding: 4%;
+}
+
+.TituloL{
+   color: black;
+  text-decoration: none;
+}
+
+.TituloR{
+    color: black;
+  text-decoration: none;
+}
 
 
+/* FORMS */
+
+.formulario{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.mainbox{
+   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  padding-top:7% ;
+}
+
+.box{
+background-color: transparent;
+border: 1px solid rgb(0, 0, 0,0.3);
+border-radius: 12px;
+padding: 3%;
+}
+
+.Titulosboxs{
+    padding: 0%;
+  margin-left: 5%;
+}
+
+  /* BOTON */
+.Boton{
+  margin-top: 10%;
+  margin-bottom: 5% ;
+  background-color: var(--BotonRyL);
+  width: 50%;
+  padding: 2%;
+  border-radius: 17px;
+  border: 1px solid rgb(0, 0, 0,0.3);
+  box-shadow: 5px 6px 1.9px 0px rgb(0, 0, 0,0.28);
+}

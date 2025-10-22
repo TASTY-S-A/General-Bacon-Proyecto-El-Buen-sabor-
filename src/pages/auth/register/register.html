@@ -4,39 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../login/Login.css">
 </head>
 
 <body>
-    <div>
-        <h2>register</h2>
-        <form id="formReg">
-            <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" autocomplete="off" type="email" placeholder="example@example.com"
-                    required></input>
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" placeholder="**********" required></input>
-            </div>
-            <div>
-                <label>Rol</label>
-                <select id="role">
-                    <option value="">Seleccione un rol</option>
-                    <option value="admin">Admin</option>
-                    <option value="client">Cliente</option>
-                </select>
-            </div>
-
-            <button type="submit">
-                Send
+    <header>
+        <img class="logo" src="logo_negro.svg" alt="logo" width="150px">
+    </header>
+    <main>
+        <section class="TarjetaL">
+            <nav class="TitulosRyL">
+                <a class="TituloL" href="../login/login.html">INICIAR SESIÓN</a>
+                <a class="TituloR" href="register.html">REGISTRARSE</a>
+            </nav>
+            <form id="form" class="formulario">
+                <article class="mainbox">
+                    <label class="Titulosboxs" for="nombre">Nombre/s*</label>
+                    <input class="box" type="text" autocomplete="off" type="text" name="Nombre" placeholder="Enzo Ruben">
+                </article>
+                <article class="mainbox">
+                    <label class="Titulosboxs" for="apellido">Apellido/s*</label>
+                    <input class="box" type="text" name="Apellido" autocomplete="off" placeholder="Severino Spitalieri">
+                </article>
+                <article class="mainbox">
+                    <label class="Titulosboxs" for="email">Email</label>
+                    <input class="box" name="email" autocomplete="off" type="email" placeholder="example@example.com"
+                        required></input>
+                </article>
+                <article class="mainbox">
+                    <label class="Titulosboxs" for="password">Contraseña</label>
+                    <input class="box" id="password" name="password" type="password" placeholder="**********" required></input>
+                </article>
+                  <article class="mainbox">
+                    <label class="Titulosboxs" for="passwordrepited">Verificar contraseña</label>
+                    <input class="box" id="password" name="passwordrepited" type="passwordverification" placeholder="**********" required></input>
+                </article>
+            <button class="Boton" type="submit">
+                REGISTRARSE
             </button>
-
-
         </form>
-    </div>
+        </section>
+    </main>
     <script type="module" src="./register.ts"></script>
 </body>
 
