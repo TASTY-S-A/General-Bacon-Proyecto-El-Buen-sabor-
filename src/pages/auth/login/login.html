@@ -4,39 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio sesión</title>
+     <link rel="stylesheet" href="Login.css ">
 </head>
 
 <body>
-    <div>
+    <header><img src="logo_negro.svg" alt="logo" width="198px"></header>
+    <main>
+    <section class="TarjetaL">
         <h2>login</h2>
         <form id="form">
-            <div>
+            <article>
                 <label for="email">Email</label>
                 <input id="email" name="email" autocomplete="off" type="email" placeholder="example@example.com"
                     required></input>
-            </div>
-            <div>
+            </article>
+            <article>
                 <label for="password">Password</label>
                 <input id="password" name="password" type="password" placeholder="**********" required></input>
-            </div>
-            <div>
+            </article>
+            <article>
                 <label>Rol</label>
                 <select id="role">
                     <option value="">Seleccione un rol</option>
                     <option value="admin">Admin</option>
                     <option value="client">Cliente</option>
                 </select>
-            </div>
+            </article>
 
             <button type="submit">
                 Send
             </button>
-
-
         </form>
-    </div>
+    </section>
+    </main>
     <script type="module" src="./login.ts"></script>
+    <div class="Pan"></div>
 </body>
 
 </html>
