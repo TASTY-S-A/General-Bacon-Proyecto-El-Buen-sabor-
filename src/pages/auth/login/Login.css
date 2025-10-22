@@ -1,0 +1,75 @@
+/*DECLARACIÓN DE VARIABLES GLOBALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+:root{
+    --Lfondo: #699A03;
+    --Cfondo: #431000; 
+    --Qfondo: #EEC307;
+    --Tfondo: #B13904;
+    --Pfondo: #FE8C78;
+    --Primary100: #FFEECB;
+    --BotonRyL: #FA7159; /*Boton que es para el momento de crar o inciar sesión*/
+    --BotonRoL: #E9DBBF; /*Boron para elegir si iniciar sesión o registrarse*/
+}
+
+/* FONDO */
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--Pfondo) 15%,   
+    var(--Lfondo) 15%,   
+    var(--Lfondo) 28%,   
+    var(--Cfondo) 28%,   
+    var(--Cfondo) 41%,   
+    var(--Qfondo) 41%,   
+    var(--Qfondo) 54%,   
+    var(--Tfondo) 54%,   
+    var(--Tfondo) 67%,   
+    var(--Cfondo) 67%,   
+    var(--Cfondo) 80%,   
+    var(--Pfondo) 80%,
+    var(--Pfondo) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: blur(8px);
+  
+}
+
+/* LOGO */
+
+.logo{
+  width: 20px;   
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* TARJETA DE INICIO DE SESIÓN */
+
+.TarjetaL{
+margin: 0 auto;
+height: 829px;
+width: 637.69px;
+background: var(--Primary100);
+border-radius: 20px;
+box-shadow: 15px 10px 4px 3px rgb(0, 0, 0,0.25);
+padding: 20px;
+transform: translateY(40px);
+display: flex;
+justify-content: center; /* centra horizontal */
+align-items: center; 
+}
+
+
+
