@@ -21,26 +21,31 @@
             <form id="form" class="formulario">
                 <article class="mainbox">
                     <label class="Titulosboxs" for="nombre">Nombre/s*</label>
-                    <input class="box" type="text" autocomplete="off" type="text" name="Nombre" placeholder="Enzo Ruben">
+                    <input id="nombre" class="box" type="text" autocomplete="off" type="text" name="Nombre" placeholder="Enzo Ruben">
                 </article>
                 <article class="mainbox">
                     <label class="Titulosboxs" for="apellido">Apellido/s*</label>
-                    <input class="box" type="text" name="Apellido" autocomplete="off" placeholder="Severino Spitalieri">
+                    <input id="apellido" class="box" type="text" name="Apellido" autocomplete="off" placeholder="Severino Spitalieri">
                 </article>
                 <article class="mainbox">
                     <label class="Titulosboxs" for="email">Email</label>
-                    <input class="box" name="email" autocomplete="off" type="email" placeholder="example@example.com"
+                    <input id="email" class="box" name="email" autocomplete="off" type="email" placeholder="example@example.com"
+                        required></input>
+                </article>
+                <article class="mainbox">
+                    <label class="Titulosboxs" for="numero">Numero</label>
+                    <input id="numero" class="box" name="numero" autocomplete="off" type="number" placeholder="+54 9 11 1234 5678"
                         required></input>
                 </article>
                 <article class="mainbox">
                     <label class="Titulosboxs" for="password">Contraseña</label>
-                    <input class="box" id="password" name="password" type="password" placeholder="**********" required></input>
+                    <input class="box" id="contraseña" name="password" type="password" placeholder="**********" required></input>
                 </article>
                   <article class="mainbox">
                     <label class="Titulosboxs" for="passwordrepited">Verificar contraseña</label>
-                    <input class="box" id="password" name="passwordrepited" type="passwordverification" placeholder="**********" required></input>
+                    <input class="box" id="contraseña2" name="passwordrepited" type="passwordverification" placeholder="**********" required></input>
                 </article>
-            <button class="Boton" type="submit">
+            <button class="boton" type="submit" id="boton">
                 REGISTRARSE
             </button>
         </form>

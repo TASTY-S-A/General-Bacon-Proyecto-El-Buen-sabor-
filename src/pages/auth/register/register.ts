@@ -1,37 +1,51 @@
 import { saveUser } from "../../../utils/localStorage";
 import type { IUser } from "../../../types/IUser";
-import type { Rol } from "../../../types/Rol";
 import { navigate } from "../../../utils/navigate";
 
 
+
 const loginForm = document.getElementById("form") as HTMLFormElement;
+const nombreInput = document.getElementById("nombre") as HTMLInputElement;
+const apellidoInput = document.getElementById("apellido") as HTMLInputElement;
 const emailInput = document.getElementById("email") as HTMLInputElement;
-const passwordInput = document.getElementById("password") as HTMLInputElement;
-const roleSelector = document.getElementById("role") as HTMLSelectElement;
+const numeroInput = document.getElementById("numero") as HTMLInputElement;
+const passwordInput = document.getElementById("contraseña") as HTMLInputElement;
+const password2Input = document.getElementById("contraseña2") as HTMLInputElement;
 
-loginForm.addEventListener("submit", (e: SubmitEvent) => {
+loginForm.addEventListener("submit", (e: SubmitEvent) => {  
   e.preventDefault();
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  const role = roleSelector.value as Rol;
 
-  if (!email || !password || !role) {
+  const nombre = nombreInput.value;
+  const apellido = apellidoInput.value;
+  const email = emailInput.value;
+  const numero = numeroInput.value;
+  const password = passwordInput.value;
+  const password2 = password2Input.value;
+
+  
+
+  if (!email || !password || !nombre || !apellido || !numero || !password2) {
     alert("NO estan todos los datos");
+    return;
+  } else if (password !== password2) {
+    alert("Las contraseñas no coinciden");
     return;
   }
 
-  //harian consulta a la api (caso real)
-  // verificarian el usuario
-  //caso practico
   const user: IUser = {
-    email,
-    role,
-    loggedIn: true,
+    nombre: nombreInput.value,
+    apellido: apellidoInput.value,
+    mail: emailInput.value,
+    celular: numeroInput.value,
+    contrasenia: passwordInput.value
+//  loggedIn: true,
   };
-  saveUser(user);
-  if (user.role === "admin") {
+saveUser(user);
+  alert("Registrando...");
+/*  if (user.role === "admin") {
     navigate("/src/pages/admin/home/home.html");
   } else if (user.role === "client") {
     navigate("/src/pages/client/home/home.html");
   }
+*/
 });
