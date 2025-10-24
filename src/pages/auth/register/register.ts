@@ -1,8 +1,6 @@
-import { saveUser } from "../../../utils/localStorage";
+import { registrar } from "../../../utils/localStorage";
 import type { IUser } from "../../../types/IUser";
 import { navigate } from "../../../utils/navigate";
-
-
 
 const loginForm = document.getElementById("form") as HTMLFormElement;
 const nombreInput = document.getElementById("nombre") as HTMLInputElement;
@@ -22,7 +20,6 @@ loginForm.addEventListener("submit", (e: SubmitEvent) => {
   const password = passwordInput.value;
   const password2 = password2Input.value;
 
-  
 
   if (!email || !password || !nombre || !apellido || !numero || !password2) {
     alert("NO estan todos los datos");
@@ -35,17 +32,11 @@ loginForm.addEventListener("submit", (e: SubmitEvent) => {
   const user: IUser = {
     nombre: nombreInput.value,
     apellido: apellidoInput.value,
-    mail: emailInput.value,
+    mail: emailInput.value.toLowerCase(),
     celular: numeroInput.value,
     contrasenia: passwordInput.value
-//  loggedIn: true,
   };
-saveUser(user);
-  alert("Registrando...");
-/*  if (user.role === "admin") {
-    navigate("/src/pages/admin/home/home.html");
-  } else if (user.role === "client") {
-    navigate("/src/pages/client/home/home.html");
-  }
-*/
+  registrar(user);
+
+  navigate("/src/pages/auth/login/login.html");
 });

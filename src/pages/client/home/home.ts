@@ -1,4 +1,3 @@
-import { checkAuthUser } from "../../../utils/auth";
 import { logoutUser } from "../../../utils/localStorage";
 
 const buttonLogout = document.getElementById(
@@ -9,8 +8,3 @@ buttonLogout.addEventListener("click", () => {
   logoutUser();
 });
 
-const initPage = () => {
-  checkAuthUser("client", "/src/pages/auth/login/login.html");
-};
-
-initPage();

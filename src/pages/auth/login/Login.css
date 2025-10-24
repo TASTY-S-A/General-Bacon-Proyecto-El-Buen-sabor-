@@ -13,7 +13,8 @@
     --Tfondo: #B13904;
     --Pfondo: #FEA778;
     --Primary100: #FFEECB;
-    --BotonRyL: #FA7159; /*Boton que es para el momento de crar o inciar sesión*/
+    --hover: #ff4d00c9; /*Boton que es para el momento de crar o inciar sesión*/
+    --BotonRyL: #ff4d00; /*Boton que es para el momento de crar o inciar sesión*/
     --BotonRoL: #E9DBBF; /*Boron para elegir si iniciar sesión o registrarse*/
 }
 
@@ -92,7 +93,7 @@ align-items: center;
 }
 
 .TituloR{
-    color: black;
+   color: black;
   text-decoration: none;
 }
 
@@ -138,4 +139,11 @@ padding: 3%;
   border: 1px solid rgb(0, 0, 0,0.3);
   box-shadow: 5px 6px 1.9px 0px rgb(0, 0, 0,0.28);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background-color: var(--hover); /* cambia el color de fondo al pasar el mouse */
+  transform: scale(1.05);    /* agranda un poquito el botón */
+  box-shadow: 6px 8px 3px 0px rgba(28, 22, 22, 0.4); /* más sombra al hover */
 }
