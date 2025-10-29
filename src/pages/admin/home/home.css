@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+body {
+    background-color: aliceblue;
+}
+/* NAVBAR GENERAL */
+    .navbar {
+    background-color: #e5e5e5; /* gris claro */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    }
+
+    /* SECCIÓN IZQUIERDA*/
+        .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        }
+
+        .navbar-left h1 {
+        font-size: 1.4rem;
+        color: #333;
+        }
+
+    /* SECCIÓN DERECHA */
+        .navbar-right {
+        display: flex;
+        gap: 20px;
+        }
+
+    /* BOTONES */
+        .nav-btn {
+        background-color: #e7e7e7;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s ease;
+        }
+
+        .pro:hover {
+        background-color: #a7ce5f;
+        transform: translateY(-2px);
+        }
+
+        .pAd:hover {
+        background-color: #d6b149;
+        transform: translateY(-2px);
+        }
+
+        .cat:hover {
+        background-color: #cc7552;
+        transform: translateY(-2px);
+        }
+/* === CONTENEDOR PRINCIPAL === */
+.container {
+  display: flex; /* 👈 CLAVE para que aside y main estén lado a lado */
+  min-height: calc(100vh - 60px);
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  width: 220px;
+  background-color: #333;
+  color: white;
+  padding-top: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #555;
+}
+
+/* === MAIN === */
+main {
+  flex: 1; /* 👈 Esto hace que el main ocupe el resto del espacio */
+  padding: 20px;
+  background-color: #fff;
+}

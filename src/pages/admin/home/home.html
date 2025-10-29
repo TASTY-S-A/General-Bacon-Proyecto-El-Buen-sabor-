@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
-    <h1>Hola desde admin</h1>
-    <button id="button_logout">Logout</button>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+                <h1>Capitán Bacon</h1>
+            </div>
+            <div class="navbar-right">
+                <a href="panelAdmin.html" class="nav-btn pAd">Panel de Administracion</a>
+                <a href="categorias.html" class="nav-btn cat">Categorías</a>
+                <a href="productos.html" class="nav-btn pro">Productos</a>
+                <button id="button_logout">Logout</button>
+            </div>
+        </nav>
+    </header>
+    
     <script type="module" src="./home.ts"></script>
 </body>
 
