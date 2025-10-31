@@ -77,6 +77,20 @@ body {
         background-color: #cc7552;
         transform: translateY(-2px);
         }
+        .btn-logout{
+          background-color: red;
+          color: whitesmoke;
+          transition: 1s;
+          border: none;
+          border-radius: 1rem;
+          padding: 0.5rem;
+        }
+        .btn-logout:hover{
+          background-color: whitesmoke;
+          color: red;
+          transform: translateY(5px);
+          border: 2px red;
+        }
 /* === CONTENEDOR PRINCIPAL === */
 .container {
   display: flex; /* 👈 CLAVE para que aside y main estén lado a lado */
@@ -123,6 +137,10 @@ main {
 }
 
 
+
+
+  
+
 /* === FORMULARIOS === */
 /* Fondo del modal */
 .overlay {
@@ -143,6 +161,13 @@ main {
   width: 400px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+.box{
+  background-color: transparent;
+  border: 1px solid rgb(0, 0, 0,0.3);
+  border-radius: 12px;
+  padding: 3%;
+  margin: 0.1rem;
+  }
 
 /* Botón de cerrar */
 .close {
@@ -163,3 +188,39 @@ main {
   border-radius: 8px;
   cursor: pointer;
 }
+/*Boton Categoria*/
+  .btnAbrirFormCat {
+    background-color: #ff6c32;
+    padding: 0.3rem;
+    border-radius: 1rem;
+      border: #f7bca5;
+      border-style: dashed;
+    font-size: 1rem;
+    transition: 1s;
+  }
+  .btnAbrirFormCat:hover {
+    background-color: #f7bca5;
+    padding: 0.3rem;
+    border-radius: 1rem;
+      border: #ff6c32;
+      border-style: dashed;
+    font-size: 1rem;
+  }
+/*Boton Productos*/
+  .btnAbrirFormProd {
+    background-color: #9bd430;
+    padding: 0.3rem;
+    border-radius: 1rem;
+      border: #cfec97;
+      border-style: dashed;
+    font-size: 1rem;
+    transition: 1s;
+  }
+  .btnAbrirFormProd:hover {
+    background-color: #cfec97;
+    padding: 0.3rem;
+    border-radius: 1rem;
+      border: #9bd430;
+      border-style: dashed;
+    font-size: 1rem;
+  }

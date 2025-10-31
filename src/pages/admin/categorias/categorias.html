@@ -14,10 +14,10 @@
                 <h1>Capitán Bacon</h1>
             </div>
             <div class="navbar-right">
-                <a href="../pedidos/pedidos.html" class="nav-btn ped">Pedidos</a>
+                <a href="../pedidos/pedidos.html" class="nav-btn pAd">Panel de Administracion</a>
                 <a href="../categorias/categorias.html" class="nav-btn cat">Categorías</a>
                 <a href="../productos/productos.html" class="nav-btn pro">Productos</a>
-                <button id="button_logout">Logout</button>
+                <button id="button_logout" class="btn-logout">Logout</button>
             </div>
         </nav>
     </header>
@@ -35,7 +35,7 @@
       <h2>Gestión de Categorias</h2>
       <p>Aquí podés ver, editar o eliminar categorias.</p>
                       <!-- Botón para abrir el modal -->
-        <button id="btnAbrirFormulario">+ Nueva Categoría</button>
+        <button id="btnAbrirFormulario" class="btnAbrirFormCat">+ Nueva Categoría</button>
         <!-- Fondo semitransparente -->
         <div id="fondoModal" class="overlay">
         <!-- Contenedor del modal -->
@@ -44,17 +44,17 @@
           <h2>Nueva Categoría</h2>
           <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Ingrese el nombre" required>
+            <input id="nombre" class="box" name="nombre" type="text" placeholder="Ingrese el nombre" required>
           </div>
           <div class="form-group">
             <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" name="descripcion" placeholder="Ingrese la descripción" required></textarea>
+            <textarea id="descripcion" class="box" name="descripcion" placeholder="Ingrese la descripción" required></textarea>
           </div>
           <div class="form-group">
             <label for="imagenUrl">URL de Imagen</label>
-            <input id="imagenUrl" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
+            <input id="imagenUrl" class="box" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
           </div>
-          <button type="submit" class="guardarCBtn">Guardar</button>
+          <button type="submit" class="guardarCBtn btnAbrirFormCat">Guardar</button>
         </form>
         </div>
 
