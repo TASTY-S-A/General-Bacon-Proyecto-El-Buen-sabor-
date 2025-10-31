@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>categorias | Admin</title>
+  <link rel="stylesheet" href="../home/home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+                <h1>Capitán Bacon</h1>
+            </div>
+            <div class="navbar-right">
+                <a href="../pedidos/pedidos.html" class="nav-btn ped">Pedidos</a>
+                <a href="../categorias/categorias.html" class="nav-btn cat">Categorías</a>
+                <a href="../productos/productos.html" class="nav-btn pro">Productos</a>
+                <button id="button_logout">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
+        <li><a href="../categorias/categorias.html" class="active">Categorías</a></li>
+        <li><a href="../productos/productos.html">Productos</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h2>Gestión de Categorias</h2>
+      <p>Aquí podés ver, editar o eliminar categorias.</p>
+                      <!-- Botón para abrir el modal -->
+        <button id="btnAbrirFormulario">+ Nueva Categoría</button>
+        <!-- Fondo semitransparente -->
+        <div id="fondoModal" class="overlay">
+        <!-- Contenedor del modal -->
+        <form id="categoriaForm" class="modal">
+          <span id="btnCerrarFormulario" class="close">&times;</span>
+          <h2>Nueva Categoría</h2>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ingrese el nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Ingrese la descripción" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imagenUrl">URL de Imagen</label>
+            <input id="imagenUrl" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
+          </div>
+          <button type="submit" class="guardarCBtn">Guardar</button>
+        </form>
+        </div>
+
+        <table id="tablaCategorias">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Imagen</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+
+      </main>
+      <script type="module" src="./categoria.ts"></script>
+</body>
+</html>

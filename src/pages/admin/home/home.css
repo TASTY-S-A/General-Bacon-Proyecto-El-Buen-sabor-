@@ -4,6 +4,21 @@
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
 }
+
+:root{
+    --Lfondo: #699A03;
+    --Cfondo: #431000; 
+    --Qfondo: #EEC307;
+    --Tfondo: #B13904;
+    --Pfondo: #FEA778;
+    --Primary100: #FFEECB;
+    --hover: #ff4d00c9; /*Boton que es para el momento de crar o inciar sesión*/
+    --BotonRyL: #ff4d00; /*Boton que es para el momento de crar o inciar sesión*/
+    --BotonRoL: #E9DBBF; /*Boron para elegir si iniciar sesión o registrarse*/
+}
+
+
+
 body {
     background-color: aliceblue;
 }
@@ -105,4 +120,46 @@ main {
   flex: 1; /* 👈 Esto hace que el main ocupe el resto del espacio */
   padding: 20px;
   background-color: #fff;
+}
+
+
+/* === FORMULARIOS === */
+/* Fondo del modal */
+.overlay {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* oscurece el fondo */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del formulario */
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Estilos del botón Guardar */
+.saveBtn {
+  background-color: #ff6b3d;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
 }

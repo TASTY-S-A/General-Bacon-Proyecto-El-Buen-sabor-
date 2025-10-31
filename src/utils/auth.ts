@@ -10,7 +10,6 @@ export const checkAuthUser = (rol: Rol, route: string) => {
     return;
   }
   const parseUser: IUser = JSON.parse(user);
-  alert(user);
   if (parseUser.rol !== rol) {
     navigate(route);
     return;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Admin</title>
+  <link rel="stylesheet" href="../home/home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+                <h1>Capitán Bacon</h1>
+            </div>
+            <div class="navbar-right">
+                <a href="../pedidos/pedidos.html" class="nav-btn ped">Pedidos</a>
+                <a href="../categorias/categorias.html" class="nav-btn cat">Categorías</a>
+                <a href="../productos/productos.html" class="nav-btn pro">Productos</a>
+                <button id="button_logout">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
+        <li><a href="../categorias/categorias.html">Categorías</a></li>
+        <li><a href="../productos/productos.html" class="active">Productos</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h2>Gestión de Productos</h2>
+      <p>Aquí podés ver, editar o eliminar productos.</p>
+          <!-- Botón para abrir el formulario -->
+          <button id="btnAbrirFormulario">+ Nuevo Producto</button>
+
+      <!-- Fondo semitransparente -->
+      <div id="fondoModal" class="overlay">
+        <!-- Contenedor del formulario/modal -->
+        <form id="formularioProducto" class="modal">
+          <span id="btnCerrarFormulario" class="cerrar">&times;</span>
+          <h2>Nueva Producto</h2>
+          <div class="campo-formulario">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ingrese el nombre" required>
+          </div>
+          <div class="campo-formulario">
+            <label for="Precio">Precio</label>
+            <input type="number" name="Precio" id="precio" placeholder="50000" required>
+          </div>
+          <div class="campo-formulario">
+            <label for="imagenUrl">URL de Imagen</label>
+            <input id="imagenUrl" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
+          </div>
+          <button type="submit" class="guardarCBtn">Guardar</button>
+        </form>
+      </div>
+    </main>
+  
+<script type="module" src="./producto.ts"></script>
+</body>
+</html>
