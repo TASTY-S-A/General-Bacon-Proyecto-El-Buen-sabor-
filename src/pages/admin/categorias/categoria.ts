@@ -11,7 +11,7 @@ const descripcionInput = document.getElementById("descripcion") as HTMLInputElem
 const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
 
 
-if (modal && abrirBtn && cerrarBtn) {
+if (modal && abrirBtn && cerrarBtn) {  //ventana
   abrirBtn.onclick = () => (modal.style.display = "flex");
 
   cerrarBtn.onclick = () => {

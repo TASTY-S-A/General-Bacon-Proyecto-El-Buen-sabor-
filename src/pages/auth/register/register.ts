@@ -12,7 +12,6 @@ const password2Input = document.getElementById("contraseña2") as HTMLInputEleme
 
 loginForm.addEventListener("submit", (e: SubmitEvent) => {  
   e.preventDefault();
-
   const nombre = nombreInput.value;
   const apellido = apellidoInput.value;
   const email = emailInput.value;
@@ -36,6 +35,7 @@ loginForm.addEventListener("submit", (e: SubmitEvent) => {
     celular: numeroInput.value,
     contrasenia: passwordInput.value
   };
+
   registrar(user);
 
   navigate("/src/pages/auth/login/login.html");

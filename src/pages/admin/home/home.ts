@@ -1,6 +1,6 @@
-import type { Rol } from "../../../types/Rol";
-import { checkAuthUser } from "../../../utils/auth";
-import { logoutUser } from "../../../utils/localStorage";
+//import type { Rol } from "../../../types/Rol";
+//import { checkAuthUser } from "../../../utils/auth";
+//import { logoutUser } from "../../../utils/localStorage";
 
 
 //const buttonLogout = document.getElementById("button_logout") as HTMLButtonElement;
