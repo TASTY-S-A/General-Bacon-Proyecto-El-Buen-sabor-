@@ -1,6 +1,7 @@
 import type { Producto } from "../../../types/Productos";
+import { verCategorias } from "../categorias/categoriaApi";
+import { crearProducto, EliminarProducto, verProductos } from "./productoApi";
 
-const API_URL = import.meta.env.VITE_API_URL;
 
 const Tabla = document.querySelector("#tablaProductos tbody");
 const modal = document.getElementById("fondoModal");
@@ -10,81 +11,51 @@ const productoForm = document.getElementById("formularioProducto") as HTMLFormEl
 const nombreInput = document.getElementById("nombre") as HTMLInputElement;
 const precioInput = document.getElementById("precio") as HTMLInputElement;
 const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
+const stockInput = document.getElementById("stock") as HTMLInputElement;
+const contenedorCategorias = document.getElementById("categoriasCheckboxes");
 
 if (modal && abrirBtn && cerrarBtn) {
-  abrirBtn.onclick = () => (modal.style.display = "flex");
+  abrirBtn.onclick = async () => { //Abrir ventana
+  modal.style.display = "flex";
+  await renderizarCategorias();
+};
 
-  cerrarBtn.onclick = () => {
+  cerrarBtn.onclick = () => { //Cerrar ventana
     modal.style.display = "none";
-    location.reload(); // recarga la página al cerrar el modal
+    llenarTablaProductos(); // recarga la tabla al cerrar el modal
   };
 
-  // Cerrar modal al hacer clic fuera
-  window.onclick = (e) => {
+  window.onclick = (e) => { //Cerrar ventana al hacer clic fuera
     if (e.target === modal) {
       modal.style.display = "none";
-      location.reload(); // También recarga si hacen clic afuera
+      llenarTablaProductos(); // También recarga la tabla si hacen clic afuera
     }
   };
 }
 
-
-productoForm.addEventListener("submit", (e: SubmitEvent) => {  
+productoForm.addEventListener("submit", async (e: SubmitEvent) => {  
   e.preventDefault();
-
-  if (!nombreInput || !precioInput) {
+  const categoriaSeleccionada = document.querySelector('input[name="categoria"]:checked') as HTMLInputElement;
+  console.log(document.querySelectorAll('input[name="categoria"]'));
+  if (!nombreInput || !precioInput || !stockInput || !categoriaSeleccionada) {
     alert("Faltan datos obligatorios");
     return;
   }
   
   const producto: Producto = {
     nombre: nombreInput.value,
-    precio: precioInput.value,
-    imagen: imagenUrl.value
+    precio: precioInput.valueAsNumber,
+    imagen: imagenUrl.value,
+    stock: stockInput.valueAsNumber, 
+    categoria: {
+      id: parseInt(categoriaSeleccionada.value)
+    }
   };
-  alert(producto.nombre + " " + producto.precio);
-  crearProducto(producto);  
+  console.log(producto.categoria?.nombre);
+  await crearProducto(producto);  
+  llenarTablaProductos();
 });
 
-
-export const crearProducto = async (ProductoData: {
-}) => {
-  try {
-    const response = await fetch(`${API_URL}/productos`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(ProductoData),
-    });
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('❌ Error al crear el Producto:', error);
-    throw error;
-  }
-};
-
-const verProductos = async () => {
-  try {
-    const response = await fetch(`${API_URL}/productos`);
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
-    const data = await response.json();
-    return data;
-  }
-  catch (error) {
-    console.error('❌ Error al obtener las categorias:', error);
-    throw error;
-  }
-};
-
-
-//METODOS FETCH
 
 const llenarTablaProductos = async () => {
   try {
@@ -100,7 +71,9 @@ const llenarTablaProductos = async () => {
         <td>${p.id}</td>
         <td>${p.nombre}</td>
         <td>${p.precio}</td>
-        <td><img src="${p.imagen}" alt="${p.nombre}" width="20" height="20" style="object-fit: cover; border-radius: 8px;"></td>
+        <td>${p.stock}</td>
+        <td>${p.categoria?.nombre}</td>
+        <td><img src="${p.imagen}" alt="${p.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
         <td><button class="eliminarbtn" data-id="${p.id}">Eliminar</button></td>
         `;
       tbody.appendChild(fila);
@@ -110,7 +83,8 @@ const llenarTablaProductos = async () => {
   }
 };
 
-Tabla?.addEventListener("click", (e) => { // Boton en la Tabla
+
+Tabla?.addEventListener("click", async (e) => { // Boton de eliminar en la Tabla
   const target = e.target as HTMLElement;
 
   if (target.classList.contains("eliminarbtn")) {
@@ -119,27 +93,26 @@ Tabla?.addEventListener("click", (e) => { // Boton en la Tabla
     console.warn("⚠️ El botón no tiene data-id.");
     return;
   } 
-  EliminarProducto(id);
-  llenarTablaProductos();
+  await EliminarProducto(id);
+  await llenarTablaProductos();
   }
 });
 
-const EliminarProducto = async (id: string) => { 
-  try {
-    const response = await fetch(`${API_URL}/productos/eliminar/${id}`, {
-      method: 'POST',
-    });
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
+//categorias en formulario de productos
+const renderizarCategorias = async () => {
+  const categorias = await verCategorias();
+  if (!contenedorCategorias) return;
 
-    await llenarTablaProductos(); 
-    return;
-  }
-  catch (error) {
-    console.error('❌ Error al eliminar la categoria:', error);
-    throw error;
-  }
+  contenedorCategorias.innerHTML = "";
+
+  categorias.forEach((cat: any) => {
+    const label = document.createElement("label");
+    label.innerHTML = `
+      <input type="radio" name="categoria" value="${cat.id}">
+      ${cat.nombre}
+    `;
+    contenedorCategorias.appendChild(label);
+  });
 };
 
 

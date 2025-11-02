@@ -36,7 +36,6 @@
       <p>Aquí podés ver, editar o eliminar productos.</p>
           <!-- Botón para abrir el formulario -->
           <button id="btnAbrirFormulario" class="btnAbrirFormProd">+ Nuevo Producto</button>
-
       <!-- Fondo semitransparente -->
       <div id="fondoModal" class="overlay">
         <!-- Contenedor del formulario/modal -->
@@ -52,18 +51,32 @@
             <input type="number" class="box" name="Precio" id="precio" placeholder="50000" required>
           </div>
           <div class="campo-formulario">
+            <label for="Stock">Stock</label>
+            <input type="number" class="box" name="Stock" id="stock" placeholder="25" required>
+          </div>
+          <div class="campo-formulario">
             <label for="imagenUrl">URL de Imagen</label>
             <input id="imagenUrl" class="box" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
+          </div>
+          <div class="campo-formulario">
+            <div id="categoriasContainer">
+              <label>Categorías:</label>
+              <div id="categoriasCheckboxes"></div>
+            </div>
           </div>
           <button type="submit" class="guardarCBtn btnAbrirFormProd">Guardar</button>
         </form>
       </div>
+
+      <!--tabla-->
       <table id="tablaProductos">
           <thead>
             <tr>
               <th>ID</th>
               <th>Nombre</th>
               <th>Precio</th>
+              <th>Stock</th>
+              <th>Categoría</th>
               <th>Imagen</th>
             </tr>
           </thead>
