@@ -13,9 +13,9 @@ const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
 
 
 if (modal && abrirBtn && cerrarBtn) {  //ventana
-  abrirBtn.onclick = () => (modal.style.display = "flex");
+  abrirBtn.onclick = () => (modal.style.display = "flex"); //abrir from
 
-  cerrarBtn.onclick = () => {
+  cerrarBtn.onclick = () => { //cerrar form
     modal.style.display = "none";
     location.reload(); // recarga la página al cerrar el modal
   };

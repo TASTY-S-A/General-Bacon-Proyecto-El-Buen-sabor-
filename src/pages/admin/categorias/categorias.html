@@ -34,11 +34,11 @@
     <main>
       <h2>Gestión de Categorias</h2>
       <p>Aquí podés ver, editar o eliminar categorias.</p>
-                      <!-- Botón para abrir el modal -->
+        <!-- Botón para abrir el form -->
         <button id="btnAbrirFormulario" class="btnAbrirFormCat">+ Nueva Categoría</button>
         <!-- Fondo semitransparente -->
         <div id="fondoModal" class="overlay">
-        <!-- Contenedor del modal -->
+        <!-- Contenedor del form -->
         <form id="categoriaForm" class="modal">
           <span id="btnCerrarFormulario" class="close">&times;</span>
           <h2>Nueva Categoría</h2>
@@ -57,8 +57,8 @@
           <button type="submit" class="guardarCBtn btnAbrirFormCat">Guardar</button>
         </form>
         </div>
-
-        <table id="tablaCategorias">
+          <!-- Tabla de categorias -->
+        <table id="tablaCategorias"> 
           <thead>
             <tr>
               <th>ID</th>

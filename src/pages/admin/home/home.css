@@ -93,7 +93,7 @@ body {
         }
 /* === CONTENEDOR PRINCIPAL === */
 .container {
-  display: flex; /* 👈 CLAVE para que aside y main estén lado a lado */
+  display: flex; /* CLAVE para que aside y main estén lado a lado */
   min-height: calc(100vh - 60px);
 }
 
