@@ -69,13 +69,13 @@ const llenarTablaProductos = async () => {
       const fila = document.createElement("tr");
       const stock = p.stock !== 0 ? "SI" : "NO";
       fila.innerHTML = `
-        <td>${p.id}</td>
-        <td>${p.nombre}</td>
-        <td>${p.precio}</td>
-        <td>${stock}</td>
-        <td>${p.categoria?.nombre}</td>
-        <td><img src="${p.imagen}" alt="${p.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
-        <td><button class="eliminarbtn" data-id="${p.id}">Eliminar</button></td>
+        <td class="texto_card-cat">${p.id}</td>
+        <td class="texto_card-cat">${p.nombre}</td>
+        <td class="texto_card-cat">${p.precio}</td>
+        <td class="texto_card-cat">${stock}</td>
+        <td class="texto_card-cat">${p.categoria?.nombre}</td>
+        <td class="texto_card-cat"><img src="${p.imagen}" alt="${p.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
+        <td><button class="eliminarbtn texto_card-cat" data-id="${p.id}">Eliminar</button></td>
         `;
       tbody.appendChild(fila);
     });

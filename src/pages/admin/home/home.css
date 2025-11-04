@@ -224,3 +224,17 @@ main {
       border-style: dashed;
     font-size: 1rem;
   }
+/* Categorias y productos tabla */
+  .texto_card-cat{
+    margin: 2rem;
+    padding: 2rem;
+    border-collapse: separate; /* separa las celdas */
+    border-spacing: 1rem; 
+  }
+  .btn_card-cat{
+    padding: 0.5rem;
+    background-color: #431000;
+    color: wheat;
+    border-radius: 0.5rem;
+    border: wheat 1rem;
+  }

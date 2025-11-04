@@ -76,11 +76,11 @@ export const llenarTablaCategorias = async () => {
     categorias.forEach((cat: Categoria) => {
       const fila = document.createElement("tr");
       fila.innerHTML = `
-        <td>${cat.id}</td>
-        <td>${cat.nombre}</td>
-        <td>${cat.descripcion}</td>
-        <td><img src="${cat.imagen}" alt="${cat.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
-        <td><button class="eliminarbtn" data-id="${cat.id}">Eliminar</button></td>
+        <td class="texto_card-cat">${cat.id}</td>
+        <td class="texto_card-cat">${cat.nombre}</td>
+        <td class="texto_card-cat">${cat.descripcion}</td>
+        <td class="img_card-cat texto_card-cat"><img src="${cat.imagen}" alt="${cat.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
+        <td><button class="eliminarbtn btn_card-cat texto_card-cat" data-id="${cat.id}">Eliminar</button></td>
         `;
       tbody.appendChild(fila);
     });
