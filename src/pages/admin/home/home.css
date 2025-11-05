@@ -6,25 +6,27 @@
 }
 
 :root{
-    --Lfondo: #699A03;
-    --Cfondo: #431000; 
-    --Qfondo: #EEC307;
-    --Tfondo: #B13904;
-    --Pfondo: #FEA778;
-    --Primary100: #FFEECB;
-    --hover: #ff4d00c9; /*Boton que es para el momento de crar o inciar sesión*/
-    --BotonRyL: #ff4d00; /*Boton que es para el momento de crar o inciar sesión*/
-    --BotonRoL: #E9DBBF; /*Boron para elegir si iniciar sesión o registrarse*/
+    --backgroundP: #FFEECB;
+    --nav-varP: #EEA37B;
+    --listCatProd: #FFC6BF;
+    --sideVar: #5A5856;
+    --sideVarAct: #73716F;
+    --btn1: #9bd430;
+    --btn1Hover: #cfec97;
+    --btn2: #ff6c32;
+    --btn2Hover: #f7bca5;
+    --btn3: #e9bf4c;
+    --btn3Hover: #e9d8aa;
 }
 
 
 
 body {
-    background-color: aliceblue;
+    background-color: var(--backgroundP);
 }
 /* NAVBAR GENERAL */
     .navbar {
-    background-color: #e5e5e5; /* gris claro */
+    background-color: var(--nav-varP); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,17 +66,17 @@ body {
         }
 
         .pro:hover {
-        background-color: #a7ce5f;
+        background-color: var(--btn1);
         transform: translateY(-2px);
         }
 
         .pAd:hover {
-        background-color: #d6b149;
+        background-color: var(--btn2);
         transform: translateY(-2px);
         }
 
         .cat:hover {
-        background-color: #cc7552;
+        background-color: var(--btn3);
         transform: translateY(-2px);
         }
         .btn-logout{
@@ -100,7 +102,7 @@ body {
 /* === SIDEBAR === */
 .sidebar {
   width: 220px;
-  background-color: #333;
+  background-color: var(--sideVar);
   color: white;
   padding-top: 20px;
   flex-shrink: 0;
@@ -126,14 +128,14 @@ body {
 
 .sidebar a:hover,
 .sidebar a.active {
-  background-color: #555;
+  background-color: var(--sideVarAct);
 }
 
 /* === MAIN === */
 main {
-  flex: 1; /* 👈 Esto hace que el main ocupe el resto del espacio */
+  flex: 1; 
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--backgroundP);
 }
 
 
@@ -155,7 +157,7 @@ main {
 
 /* Contenedor del formulario */
 .modal {
-  background: white;
+  background: var(--backgroundP);
   padding: 2rem;
   border-radius: 12px;
   width: 400px;
@@ -180,7 +182,7 @@ main {
 
 /* Estilos del botón Guardar */
 .saveBtn {
-  background-color: #ff6b3d;
+  background-color: var(--btn2);
   color: white;
   border: none;
   padding: 10px;
@@ -190,37 +192,37 @@ main {
 }
 /*Boton Categoria*/
   .btnAbrirFormCat {
-    background-color: #ff6c32;
+    background-color: var(--btn2);
     padding: 0.3rem;
     border-radius: 1rem;
-      border: #f7bca5;
+      border: var(--btn2Hover);
       border-style: dashed;
     font-size: 1rem;
     transition: 1s;
   }
   .btnAbrirFormCat:hover {
-    background-color: #f7bca5;
+    background-color: var(--btn2Hover);
     padding: 0.3rem;
     border-radius: 1rem;
-      border: #ff6c32;
+      border: var(--btn2);
       border-style: dashed;
     font-size: 1rem;
   }
 /*Boton Productos*/
   .btnAbrirFormProd {
-    background-color: #9bd430;
+    background-color: var(--btn1);
     padding: 0.3rem;
     border-radius: 1rem;
-      border: #cfec97;
+      border: var(--btn1Hover);
       border-style: dashed;
     font-size: 1rem;
     transition: 1s;
   }
   .btnAbrirFormProd:hover {
-    background-color: #cfec97;
+    background-color: var(--btn1Hover);
     padding: 0.3rem;
     border-radius: 1rem;
-      border: #9bd430;
+      border: var(--btn1);
       border-style: dashed;
     font-size: 1rem;
   }
