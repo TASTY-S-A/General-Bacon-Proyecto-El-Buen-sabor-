@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Cliente</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60" />
+        <h1>Capitán Bacon</h1>
+      </div>
+      <div class="navbar-right">
+        <a href="../pedidos/pedidos.html" class="nav-btn pAd">Panel de Administración</a>
+        <a href="../categorias/categorias.html" class="nav-btn cat">Tienda</a>
+        <a href="../productos/productos.html" class="nav-btn pro">Nombre Usuario</a>
+        <button id="button_logout" class="btn-logout">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3 style="padding-left:20px; margin-bottom:10px;">Categorías</h3>
+      <ul id="lista-categorias">
+        <li><a href="#" class="active">Todos los productos</a></li>
+        
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <!-- Buscador y filtros -->
+      <section class="filtros" style="display:flex; justify-content:space-between; align-items:center; background-color:white; padding:10px 20px; border-radius:8px; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        <input type="text" placeholder="Buscar productos..." style="width:60%; padding:8px; border-radius:6px; border:1px solid #ccc;">
+        <div class="selectores" style="display:flex; gap:10px;">
+          <select style="padding:8px; border-radius:6px; border:1px solid #ccc;">
+            <option>Ordenar por</option>
+            <option>Precio: menor a mayor</option>
+            <option>Precio: mayor a menor</option>
+          </select>
+          <select style="padding:8px; border-radius:6px; border:1px solid #ccc;">
+            <option>Todos</option>
+            <option>Disponibles</option>
+            <option>No disponibles</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Lista de productos -->
+      <section class="productos">
+        <h2 style="margin-bottom:20px;">Todos los Productos</h2>
+
+        <div class="grid-productos" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px;">
+          <!-- CARD PRODUCTO -->
+          <div class="card" style="background-color:white; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); overflow:hidden; transition:0.3s;">
+            <img src="https://media.istockphoto.com/id/930273620/photo/healthy-alphabet-soup-in-tomato-sauce.jpg?s=2048x2048"
+              alt="Hamburguesa triple"
+              style="width:100%; height:180px; object-fit:cover;">
+            <div class="info" style="padding:15px;">
+              <span style="font-size:0.9rem; color:#888;">Hamburguesas</span>
+              <h3 style="margin:5px 0;">Hamburguesa triple</h3>
+              <p style="font-size:0.9rem;">Hamburguesa triple smash</p>
+              <p style="font-weight:bold; color:var(--btn2); margin:8px 0;">$25000.00</p>
+              <span style="background-color:var(--btn1); color:white; padding:5px 10px; border-radius:8px; font-size:0.85rem;">Disponible</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./home.ts"></script>
+</body>
+</html>

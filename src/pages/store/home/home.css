@@ -131,112 +131,74 @@ body {
   background-color: var(--sideVarAct);
 }
 
-/* === MAIN === */
-main {
-  flex: 1; 
-  padding: 20px;
-  background-color: var(--backgroundP);
-}
+/* === Productos === */
+    main {
+    flex: 1; 
+    padding: 20px;
+    background-color: var(--backgroundP);
+    }
+    .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    width: 250px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
 
+    .card:hover {
+    transform: scale(1.03);
+    }
 
+    .img_card-cat img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    }
 
+    .texto_card-cat {
+    padding: 15px;
+    }
 
-  
+    .categoria_card-cat {
+    font-size: 0.9rem;
+    color: #888;
+    }
 
-/* === FORMULARIOS === */
-/* Fondo del modal */
-.overlay {
-  display: none; /* Oculto por defecto */
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* oscurece el fondo */
-  justify-content: center;
-  align-items: center;
-}
+    .precio_card-cat {
+    font-weight: bold;
+    color: var(--btn2);
+    margin: 8px 0;
+    }
 
-/* Contenedor del formulario */
-.modal {
-  background: var(--backgroundP);
-  padding: 2rem;
-  border-radius: 12px;
-  width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.box{
-  background-color: transparent;
-  border: 1px solid rgb(0, 0, 0,0.3);
-  border-radius: 12px;
-  padding: 3%;
-  margin: 0.1rem;
-  }
+    .estado_card-cat {
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    }
 
-/* Botón de cerrar */
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
+    .btn_card-cat {
+    background-color: var(--btn3);
+    border: none;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
 
-/* Estilos del botón Guardar */
-.saveBtn {
-  background-color: var(--btn2);
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-}
-/*Boton Categoria*/
-  .btnAbrirFormCat {
-    background-color: var(--btn2);
-    padding: 0.3rem;
-    border-radius: 1rem;
-      border: var(--btn2Hover);
-      border-style: dashed;
-    font-size: 1rem;
-    transition: 1s;
-  }
-  .btnAbrirFormCat:hover {
-    background-color: var(--btn2Hover);
-    padding: 0.3rem;
-    border-radius: 1rem;
-      border: var(--btn2);
-      border-style: dashed;
-    font-size: 1rem;
-  }
-/*Boton Productos*/
-  .btnAbrirFormProd {
-    background-color: var(--btn1);
-    padding: 0.3rem;
-    border-radius: 1rem;
-      border: var(--btn1Hover);
-      border-style: dashed;
-    font-size: 1rem;
-    transition: 1s;
-  }
-  .btnAbrirFormProd:hover {
-    background-color: var(--btn1Hover);
-    padding: 0.3rem;
-    border-radius: 1rem;
-      border: var(--btn1);
-      border-style: dashed;
-    font-size: 1rem;
-  }
-/* Categorias y productos tabla */
-  .texto_card-cat{
-    margin: 2rem;
-    padding: 2rem;
-    border-collapse: separate; /* separa las celdas */
-    border-spacing: 1rem; 
-  }
-  .btn_card-cat{
-    padding: 0.5rem;
-    background-color: #431000;
-    color: wheat;
-    border-radius: 0.5rem;
-    border: wheat 1rem;
-  }
+    .btn_card-cat:hover {
+    background-color: var(--btn3Hover);
+    }
+
+    #grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    }
