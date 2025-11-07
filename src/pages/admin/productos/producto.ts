@@ -3,6 +3,10 @@ import { verCategorias } from "../categorias/categoriaApi";
 import { crearProducto, EliminarProducto, verProductos } from "./productoApi";
 
 
+import { logoutUser } from "../../../utils/localStorage";
+const botonLog = document.getElementById("Logout") as HTMLInputElement;
+const buttonLogout = document.getElementById("button_logout") as HTMLButtonElement;
+
 const Tabla = document.querySelector("#tablaProductos tbody");
 const modal = document.getElementById("fondoModal");
 const abrirBtn = document.getElementById("btnAbrirFormulario");
@@ -13,6 +17,23 @@ const precioInput = document.getElementById("precio") as HTMLInputElement;
 const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
 const stockInput = document.getElementById("stock") as HTMLInputElement;
 const contenedorCategorias = document.getElementById("categoriasCheckboxes");
+
+
+
+export const btnlogout = async () => {
+const data = localStorage.getItem("userData");
+
+  if (data) {
+    const user = JSON.parse(data); 
+    botonLog.textContent = user.nombre; 
+  } else {
+    botonLog.textContent = "Iniciar sesión";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", btnlogout);
+
+buttonLogout.addEventListener("click", () => {logoutUser();});
 
 if (modal && abrirBtn && cerrarBtn) {
   abrirBtn.onclick = async () => { //Abrir ventana
@@ -75,7 +96,7 @@ const llenarTablaProductos = async () => {
         <td class="texto_card-cat">${stock}</td>
         <td class="texto_card-cat">${p.categoria?.nombre}</td>
         <td class="texto_card-cat"><img src="${p.imagen}" alt="${p.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
-        <td><button class="eliminarbtn texto_card-cat" data-id="${p.id}">Eliminar</button></td>
+        <td><button class="eliminarbtn btn_card-cat texto_card-cat" data-id="${p.id}">Eliminar</button></td>
         `;
       tbody.appendChild(fila);
     });

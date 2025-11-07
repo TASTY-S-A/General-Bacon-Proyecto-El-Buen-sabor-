@@ -1,4 +1,5 @@
 import type { Categoria } from "../../../types/Categoria";
+import { logoutUser } from "../../../utils/localStorage";
 import { crearCategoria, EliminarCategoria, verCategorias } from "./categoriaApi";
 
 
@@ -10,6 +11,8 @@ const categoriaForm = document.getElementById("categoriaForm") as HTMLFormElemen
 const nombreInput = document.getElementById("nombre") as HTMLInputElement;
 const descripcionInput = document.getElementById("descripcion") as HTMLInputElement;
 const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
+const botonLog = document.getElementById("Logout") as HTMLInputElement;
+const buttonLogout = document.getElementById("button_logout") as HTMLButtonElement;
 
 
 if (modal && abrirBtn && cerrarBtn) {  //ventana
@@ -89,7 +92,20 @@ export const llenarTablaCategorias = async () => {
   }
 };
 
+export const btnlogout = async () => {
+const data = localStorage.getItem("userData");
 
+  if (data) {
+    const user = JSON.parse(data); 
+    botonLog.textContent = user.nombre; 
+  } else {
+    botonLog.textContent = "Iniciar sesión";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", btnlogout);
+
+buttonLogout.addEventListener("click", () => {logoutUser();});
 
 llenarTablaCategorias();
 

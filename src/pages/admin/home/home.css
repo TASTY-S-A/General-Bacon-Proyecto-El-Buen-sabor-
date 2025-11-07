@@ -239,4 +239,9 @@ main {
     color: wheat;
     border-radius: 0.5rem;
     border: wheat 1rem;
+    transition: 0.4s;
+  }
+  .btn_card-cat:hover{
+    background-color: var(--btn2);
+    color: #333;
   }
