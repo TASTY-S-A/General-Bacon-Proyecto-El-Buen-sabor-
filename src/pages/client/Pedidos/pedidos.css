@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+:root{
+    --backgroundP: #FFEECB;
+    --nav-varP: #EEA37B;
+    --listCatProd: #FFC6BF;
+    --sideVar: #5A5856;
+    --sideVarAct: #73716F;
+    --btn1: #9bd430;
+    --btn1Hover: #cfec97;
+    --btn2: #ff6c32;
+    --btn2Hover: #f7bca5;
+    --btn3: #e9bf4c;
+    --btn3Hover: #e9d8aa;
+}
+
+
+
+body {
+    background-color: var(--backgroundP);
+}
+/* NAVBAR GENERAL */
+    .navbar {
+    background-color: var(--nav-varP); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    }
+
+    /* SECCIÓN IZQUIERDA*/
+        .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        }
+
+        .navbar-left h1 {
+        font-size: 1.4rem;
+        color: #333;
+        }
+
+    /* SECCIÓN DERECHA */
+        .navbar-right {
+        display: flex;
+        gap: 20px;
+        }
+
+    /* BOTONES */
+        .nav-btn {
+        background-color: #e7e7e7;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s ease;
+        }
+
+        .pro:hover {
+        background-color: var(--btn1);
+        transform: translateY(-2px);
+        }
+
+        .pAd:hover {
+        background-color: var(--btn2);
+        transform: translateY(-2px);
+        }
+
+        .cat:hover {
+        background-color: var(--btn3);
+        transform: translateY(-2px);
+        }
+        .btn-logout{
+          background-color: red;
+          color: whitesmoke;
+          transition: 1s;
+          border: none;
+          border-radius: 1rem;
+          padding: 0.5rem;
+        }
+        .btn-logout:hover{
+          background-color: whitesmoke;
+          color: red;
+          transform: translateY(5px);
+          border: 2px red;
+        }
+/*tabla pedidos y main*/
+main {
+  padding: 20px;
+  background-color: var(--backgroundP);
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: var(--sideVar);
+}
+
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* === TARJETAS DE PEDIDOS === */
+.pedido-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+
+.pedido-card:hover {
+  transform: scale(1.01);
+}
+
+.pedido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: var(--sideVar);
+}
+
+.pedido-info {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pedido-estado {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.pedido-estado.pendiente {
+  background-color: var(--btn3);
+}
+.pedido-estado.enviado {
+  background-color: var(--btn1);
+}
+.pedido-estado.cancelado {
+  background-color: var(--btn2);
+}

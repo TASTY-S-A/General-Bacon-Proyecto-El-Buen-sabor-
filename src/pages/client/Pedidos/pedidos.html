@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos | Cliente</title>
+  <link rel="stylesheet" href="pedidos.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+                <h1>Capitán Bacon</h1>
+            </div>
+            <div class="navbar-right">
+                <a href="../../store/home/home.html" class="nav-btn pAd">Inicio</a>
+                <a href="../../client/Pedidos/pedidos.html" class="nav-btn pro">Mis Pedidos</a>
+                <a href="../../store/Carrito/carrito.html" class="nav-btn cat">Carrito</a>
+                <a href="../" class="nav-btn pro" id="Logout">-</a>
+                <button id="button_logout" class="btn-logout">Logout</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <h2>Pedidos realizados</h2>
+    <p>Visualizá todos los pedidos del usuario de forma detallada.</p>
+
+    <!-- Contenedor donde se cargarán los pedidos -->
+    <section id="lista-pedidos" class="lista-pedidos">
+      <!-- Cada pedido se genera dinámicamente con JS -->
+    </section>
+    </main>
+
+  <script type="module" src="./pedidos.ts"></script>
+</body>
+</html>
