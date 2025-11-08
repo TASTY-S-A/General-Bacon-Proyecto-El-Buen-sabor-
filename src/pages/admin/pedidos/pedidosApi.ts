@@ -1,25 +1,8 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
-export const EliminarProducto = async (id: string) => { 
+export const verPedidos = async () => {
   try {
-    const response = await fetch(`${API_URL}/productos/eliminar/${id}`, {
-      method: 'POST',
-    });
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
-    return;
-  }
-  catch (error) {
-    console.error('❌ Error al eliminar el producto:', error);
-    throw error;
-  }
-};
-
-
-export const verProductos = async () => {
-  try {
-    const response = await fetch(`${API_URL}/productos`);
+    const response = await fetch(`${API_URL}/pedidos`);
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
@@ -31,3 +14,22 @@ export const verProductos = async () => {
     throw error;
   }
 };
+
+export const cambiarEstado = async (pedido: { id: any; estado: any; }) => {
+    try{
+      const response = await fetch(`${API_URL}/pedidos/actualizar/${pedido.id}`, {
+      method: 'PACTH',
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(pedido.estado),
+    });
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+    return;
+    }catch (error){
+    console.error('❌ Error al eliminar el producto:', error);
+    throw error;
+    }
+}

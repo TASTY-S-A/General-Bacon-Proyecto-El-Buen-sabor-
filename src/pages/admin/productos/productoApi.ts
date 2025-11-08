@@ -54,3 +54,18 @@ export const verProductos = async () => {
     throw error;
   }
 };
+
+export const verProductosCategoria = async (id: string) => {
+  try {
+    const response = await fetch(`${API_URL}/productos/obtenerPorCategoria/${id}`);
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  }
+  catch (error) {
+    console.error('❌ Error al obtener el producto:', error);
+    throw error;
+  }
+};
