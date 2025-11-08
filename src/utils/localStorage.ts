@@ -17,10 +17,10 @@ export const inicioSesion = (userData: IUser) => {
   loginUsuario(userData.mail, userData.contrasenia)
     .then((data) => {
       localStorage.setItem('userData', JSON.stringify(data));
-      if(data.Rol === "ADMIN"){
-        navigate("/src/pages/client/home/home.html");
-      }else{
+      if(data.rol === "ADMIN"){
         navigate("/src/pages/admin/home/home.html");
+      }else{
+        navigate("/src/pages/store/home/home.html");
       } 
     })
     .catch((err) => {
@@ -28,10 +28,12 @@ export const inicioSesion = (userData: IUser) => {
     });
 };
 
-
-
-
 export const logoutUser = () => {
   localStorage.removeItem("userData");
   navigate("/src/pages/auth/login/login.html");
 };
+
+
+if (!localStorage.getItem("carrito")) {
+  localStorage.setItem("carrito", JSON.stringify([]));
+}

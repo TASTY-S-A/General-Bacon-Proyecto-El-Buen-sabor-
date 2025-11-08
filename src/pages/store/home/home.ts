@@ -1,15 +1,30 @@
 import { logoutUser } from "../../../utils/localStorage";
 import {verProductosCategoria} from "../../admin/productos/productoApi"
 import { verCategorias } from "../../admin/categorias/categoriaApi";
+import type { Rol } from "../../../types/Rol";
 
+
+const botonLog = document.getElementById("Logout") as HTMLInputElement;
 const buttonLogout = document.getElementById("button_logout") as HTMLButtonElement;
 const listaCategorias = document.getElementById("lista-categorias") as HTMLUListElement;
 const gridProductos = document.getElementById("grid-productos") as HTMLDivElement;
+const btn_carrito =document.getElementById("btn-carrito") as HTMLButtonElement;
+const adminPanel = document.getElementById("PanelAdmin") as HTMLAnchorElement;
 
+const data = localStorage.getItem("userData");
+export const btnlogout = async () => {
+const data = localStorage.getItem("userData");
+
+  if (data) {
+    const user = JSON.parse(data); 
+    botonLog.textContent = user.nombre; 
+  } else {
+    botonLog.textContent = "Iniciar sesión";
+  }
+}
 buttonLogout.addEventListener("click", () => {
   logoutUser();
 });
-
 async function cargarCategorias() {
   try {
     const categorias = await verCategorias();
@@ -30,7 +45,7 @@ async function cargarCategorias() {
         listaCategorias.querySelectorAll("a").forEach(x => x.classList.remove("active"));
         a.classList.add("active");
         const id = a.getAttribute("data-id");
-        cargarProductos(id === "0" ? undefined : id);
+        cargarProductos(id === null ? undefined : id);
       });
     });
   } catch (error) {
@@ -48,23 +63,31 @@ async function cargarProductos(categoriaId?: string) {
     productos.forEach((prod: any) => {
       const card = document.createElement("div");
       card.className = "card";
+      let disponible = "No Disponible";
+      let color = "red";
+
+      if(prod.stock > 0) {
+        disponible = "Disponible";
+        color = "green";
+      }
 
       card.innerHTML = `
         <div class="img_card-cat">
-          <img src="${prod.imagen_url || "https://via.placeholder.com/250x180"}" alt="${prod.nombre}">
+          <img src="${prod.imagen}" alt="${prod.nombre}">
         </div>
 
         <div class="texto_card-cat">
           <span class="categoria_card-cat">${prod.categoria?.nombre || "Sin categoría"}</span>
           <h3>${prod.nombre}</h3>
-          <p>${prod.descripcion || "Sin descripción"}</p>
+          <!--<p>${prod.descripcion || "Sin descripción"}</p>-->
           <p class="precio_card-cat">$${prod.precio}</p>
-          <span class="estado_card-cat" style="background-color: ${prod.disponible ? "var(--btn1)" : "gray"}">
-            ${prod.disponible ? "Disponible" : "No disponible"}
+          <span class="estado_card-cat" style="background-color: ${color}">
+            ${disponible}
           </span>
         </div>
 
-        <button class="btn_card-cat">Agregar al carrito</button>
+        <button class="btn_card-cat" data-id="${prod.id}">Agregar al carrito</button>
+
       `;
 
       gridProductos.appendChild(card);
@@ -74,14 +97,52 @@ async function cargarProductos(categoriaId?: string) {
     gridProductos.innerHTML = `<p>Error al cargar productos</p>`;
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const gridProductos = document.getElementById("grid-productos") as HTMLDivElement;
+
+  // Delegamos el click desde el grid hacia los botones creados dinámicamente
+  gridProductos.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+
+    // Verifica que el click sea en un botón "Agregar al carrito"
+    if (target.classList.contains("btn_card-cat")) {
+      const id = target.dataset.id;
+      if (!id) return;
+
+      // Obtener carrito actual
+      const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+
+      // Ver si el producto ya está en el carrito
+      const productoExistente = carrito.find((p: any) => p.id === Number(id));
+
+      if (productoExistente) {
+        productoExistente.cantidad += 1;
+      } else {
+        carrito.push({ id: Number(id), cantidad: 1 });
+      }
+
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
+      alert("Producto agregado al carrito ✅");
+      console.log("Carrito actualizado:", carrito);
+    }
+  });
+});
+const userData = data ? JSON.parse(data) : null;
+if (userData?.rol === "ADMIN" as Rol) {
+    adminPanel.style.display = "inline-block";
+} else {
+    adminPanel.style.display = "none"; // opcional
+}
 
 
-
-/* ==============================
-   INICIALIZAR AL CARGAR PÁGINA
-============================== */
 document.addEventListener("DOMContentLoaded", () => {
   cargarCategorias();
-  cargarProductos(); // solo acá
+  cargarProductos();
+  window.addEventListener("DOMContentLoaded", btnlogout);
 });
+
+
+
+
 

@@ -18,8 +18,6 @@ const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
 const stockInput = document.getElementById("stock") as HTMLInputElement;
 const contenedorCategorias = document.getElementById("categoriasCheckboxes");
 
-
-
 export const btnlogout = async () => {
 const data = localStorage.getItem("userData");
 
