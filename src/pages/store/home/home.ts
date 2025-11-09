@@ -2,6 +2,7 @@ import { logoutUser } from "../../../utils/localStorage";
 import {verProductosCategoria} from "../../admin/productos/productoApi"
 import { verCategorias } from "../../admin/categorias/categoriaApi";
 import type { Rol } from "../../../types/Rol";
+import { navigate } from "../../../utils/navigate";
 
 
 const botonLog = document.getElementById("Logout") as HTMLInputElement;
@@ -72,7 +73,8 @@ async function cargarProductos(categoriaId?: string) {
       }
 
       card.innerHTML = `
-        <div class="img_card-cat">
+      <div class="card" data-id="${prod.id}">
+        <div class="img_card-cat" data-id="${prod.id}">
           <img src="${prod.imagen}" alt="${prod.nombre}">
         </div>
 
@@ -85,9 +87,7 @@ async function cargarProductos(categoriaId?: string) {
             ${disponible}
           </span>
         </div>
-
-        <button class="btn_card-cat" data-id="${prod.id}">Agregar al carrito</button>
-
+      </div>
       `;
 
       gridProductos.appendChild(card);
@@ -99,33 +99,15 @@ async function cargarProductos(categoriaId?: string) {
 }
 document.addEventListener("DOMContentLoaded", () => {
   const gridProductos = document.getElementById("grid-productos") as HTMLDivElement;
-
-  // Delegamos el click desde el grid hacia los botones creados dinámicamente
   gridProductos.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
-
-    // Verifica que el click sea en un botón "Agregar al carrito"
-    if (target.classList.contains("btn_card-cat")) {
-      const id = target.dataset.id;
-      if (!id) return;
-
-      // Obtener carrito actual
-      const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
-
-      // Ver si el producto ya está en el carrito
-      const productoExistente = carrito.find((p: any) => p.id === Number(id));
-
-      if (productoExistente) {
-        productoExistente.cantidad += 1;
-      } else {
-        carrito.push({ id: Number(id), cantidad: 1 });
-      }
-
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-
-      alert("Producto agregado al carrito ✅");
-      console.log("Carrito actualizado:", carrito);
+  const tarjeta = target.closest(".card") as HTMLElement;
+  if (tarjeta) {
+    const id = tarjeta.dataset.id;
+    if (id) {
+      navigate(`/src/pages/store/detalle/detalle.html?id=${id}`);
     }
+  }
   });
 });
 const userData = data ? JSON.parse(data) : null;
@@ -134,6 +116,8 @@ if (userData?.rol === "ADMIN" as Rol) {
 } else {
     adminPanel.style.display = "none"; // opcional
 }
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

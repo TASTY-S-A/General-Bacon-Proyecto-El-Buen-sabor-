@@ -10,5 +10,5 @@ export interface Pedido {
   metodoPago: MetodoPago;
   estado?: Estado;
   productos: Producto[];
-  usuarios: any;
+  usuarioId: any;
 }   

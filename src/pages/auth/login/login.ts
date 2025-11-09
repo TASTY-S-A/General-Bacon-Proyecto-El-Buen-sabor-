@@ -7,7 +7,6 @@ const passwordInput = document.getElementById("password") as HTMLInputElement;
 
 loginForm.addEventListener("submit", (e: SubmitEvent) => {
   e.preventDefault();
-    alert("Usuario logeado con exito");
   const mail = mailInput.value.toLowerCase();
   const contrasenia = passwordInput.value;
 

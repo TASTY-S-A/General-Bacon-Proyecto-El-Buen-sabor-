@@ -1,0 +1,120 @@
+/* Contenedor general */
+.product-details-container {
+  width: 100%;
+  max-width: 90%;
+  margin:  auto;
+  padding: 4%;
+  background: #f4f6f8;             /* Fondo gris claro */
+  border-radius: 20px;
+  display: flex;
+  gap: 50px;
+  min-height: 500px;
+}
+
+/* Imagen del producto */
+.img_card-cat {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_card-cat img {
+  width: 100%;            /* Que ocupe el ancho completo */
+  height: 100%;           /* Que ocupe toda la altura disponible */
+  object-fit: cover;      /* LLENA el espacio sin dejar bordes */
+  border-radius: 15px;
+}
+
+
+/* Contenido de texto */
+.texto_card-cat {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.texto_card-cat h3 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.categoria_card-cat {
+  background: #e5e5e5;
+  padding: 8px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  width: fit-content;
+}
+.estado_card-cat{
+    color: black;
+}
+.precio_card-cat {
+  font-size: 22px;
+  font-weight: bold;
+  color: #11a86c; /* Verde igual al diseño */
+}
+
+/* Contador */
+.cantidad-box {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contador button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #e3e6ea;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.cantidad-input {
+  width: 55px;
+  height: 45px;
+  text-align: center;
+  border: none;
+  background: white;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* Botones Finales */
+.botones-final {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn_card-cat {
+  flex: 1;
+  background: #ff6f47;       /* Naranja igual al diseño */
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.btn_volver {
+  width: 150px;
+  background: #e2e4e8;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+

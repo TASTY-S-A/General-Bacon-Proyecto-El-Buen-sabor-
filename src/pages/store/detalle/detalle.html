@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito</title>
+  <link rel="stylesheet" href="../home/home.css">
+  <link rel="stylesheet" href="detalle.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+                <h1>Capitán Bacon</h1>
+            </div>
+            <div class="navbar-right">
+                <a href="../../store/home/home.html" class="nav-btn pAd">Inicio</a>
+                <a href="../../client/Pedidos/pedidos.html" class="nav-btn pro">Mis Pedidos</a>
+                <a href="../../store/Carrito/carrito.html" class="nav-btn cat">Carrito</a>
+                <!-- <a class="nav-btn nombre" id="Logout">-</a> -->
+                <button id="button_logout" class="btn-logout">Logout</button>
+            </div>
+        </nav>
+    </header>
+<main class="product-details-container">
+
+  <div class="img_card-cat">
+    <img src="" alt="">
+  </div>
+  <div class="texto_card-cat">
+      <span class="categoria_card-cat"></span>
+      <h3></h3>
+      <p class="precio_card-cat"></p>
+      <span class="estado_card-cat"></span>
+
+      <p class="descripcion_card-cat"></p>
+
+      <div class="cantidad-box">
+        <label>Cantidad:</label>
+
+        <div class="contador">
+          <button class="btn_card_menos">-</button>
+          <input type="text" class="cantidad-input" value="1" readonly>
+          <button class="btn_card_mas">+</button>
+        </div>
+      </div>
+
+      <div class="botones-final">
+        <button class="btn_card-cat">Agregar al carrito</button>
+        <button class="btn_volver">Volver</button>
+      </div>
+  </div>
+
+</main>
+
+
+
+  <script type="module" src="./detalle.ts"></script>
+</body>
+</html>

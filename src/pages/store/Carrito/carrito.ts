@@ -41,6 +41,7 @@ async function cargarCarrito() {
 
 btn_comprar.addEventListener("click", (e) => {
   e.preventDefault();
+  const usuarioId = JSON.parse(localStorage.getItem("userData") || "null");
 
   const direccionInput = document.getElementById("direccion") as HTMLInputElement;
   const fechaInput = document.getElementById("fecha") as HTMLInputElement;  
@@ -53,7 +54,7 @@ btn_comprar.addEventListener("click", (e) => {
     total: total,
     metodoPago: metodoPagoInput?.value.toUpperCase() as MetodoPago,
     productos: JSON.parse(localStorage.getItem("carrito") || "[]"),
-    usuarios: JSON.parse(localStorage.getItem("userData.id") || "{}"),
+    usuarioId: usuarioId.id,
   };
 
   console.log("Pedido a enviar:", pedido);

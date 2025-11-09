@@ -84,3 +84,23 @@ export const obtenerProductoPorId = async (id: string) => {
     throw error;
   }
 }
+
+export const sumarStock = async (id: string, stock: number) => {
+  try {
+    const response = await fetch(`${API_URL}/productos/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ stock }),
+    });
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+    return;
+  }
+  catch (error) {
+    console.error('❌ Error al actualizar el stock:', error);
+    throw error;
+  }
+}

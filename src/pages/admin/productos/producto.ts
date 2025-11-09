@@ -17,6 +17,9 @@ const precioInput = document.getElementById("precio") as HTMLInputElement;
 const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
 const stockInput = document.getElementById("stock") as HTMLInputElement;
 const contenedorCategorias = document.getElementById("categoriasCheckboxes");
+const btnMas = document.querySelector(".pedido-button-mas") as HTMLButtonElement;
+const btnMenos = document.querySelector(".pedido-button-menos") as HTMLButtonElement;
+let stock = 0;
 
 export const btnlogout = async () => {
 const data = localStorage.getItem("userData");
@@ -95,6 +98,8 @@ const llenarTablaProductos = async () => {
         <td class="texto_card-cat">${p.categoria?.nombre}</td>
         <td class="texto_card-cat"><img src="${p.imagen}" alt="${p.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
         <td><button class="eliminarbtn btn_card-cat texto_card-cat" data-id="${p.id}">Eliminar</button></td>
+        <td><button class="sumarbtn btn_card-cat texto_card-cat" data-id="${p.id}">+</button></td>
+        <td><button class="restarbtn btn_card-cat texto_card-cat" data-id="${p.id}">-</button></td>
         `;
       tbody.appendChild(fila);
     });
