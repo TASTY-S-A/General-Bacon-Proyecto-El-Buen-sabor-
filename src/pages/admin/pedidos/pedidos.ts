@@ -37,8 +37,9 @@ export const llenarTablaPedidos = async () => {
       card.classList.add("pedido-card");
 
       card.innerHTML = `
+      <section class="tarjeta">
         <div class="pedido-header">
-          <div>
+          <div class= "pedidosdatos">
             <h3 class="pedido-titulo">Pedido #${pedido.id}</h3>
             <p class="pedido-cliente">Dirección: <span>${pedido.direccion}</span></p>
             <p class="pedido-fecha">${fecha}</p>
@@ -47,12 +48,14 @@ export const llenarTablaPedidos = async () => {
           <span class="pedido-estado">${pedido.estado}</span>
         </div>
 
-        <hr class="pedido-separador">
+         <hr class="pedido-separador">
 
         <div class="pedido-footer">
           <p class="pedido-cantidad">${pedido.productos.length} Producto(s): ${nombresProductos}</p>
           <p class="pedido-total">$${(pedido.total ?? 0).toFixed(2)}</p>
         </div>
+        
+      </section>
       `;
 
       contenedor.appendChild(card);

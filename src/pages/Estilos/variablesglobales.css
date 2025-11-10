@@ -1,0 +1,23 @@
+/*DECLARACIÓN DE VARIABLES GLOBALES */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+:root{
+    --backgeneral: #FFEECB;
+    --headergeneral: #EEA47B;
+    --leftbar: #5A5856;
+    --buttoncolor: #EE5007;
+    --backtarjetaPedido: #FFEDEB;
+    --botonestodopedido: #FE8C78;
+    --Textopedidototal: #EE5007;
+}
+
+html,body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}

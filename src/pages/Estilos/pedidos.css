@@ -1,0 +1,74 @@
+.pcont{
+    flex: 1;
+    padding: 20px;
+}
+
+.container{
+      display: flex;
+}
+
+.titleGP{
+    margin: 1%;
+}
+.descrpGP{
+    margin: 1%;
+}
+.tarjeta{
+    margin: 1rem;
+    background-color: var(--backtarjetaPedido);
+    padding: 1%;
+     border-radius: 17px;
+  border: 1px solid rgb(0, 0, 0,0.3);
+  box-shadow: 4px 5px 2px 0px rgb(0, 0, 0,0.28);
+}
+
+
+.pedido-estado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 8rem;
+    height: 0%;
+    padding: 0.6rem;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0,0.2);
+    box-shadow: 2px 3px 4px 0px rgb(0, 0, 0,0.25);
+    background-color: var(--botonestodopedido)
+}
+.pedido-estado{
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.4); 
+}
+.tarjeta p{
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.pedidosdatos{
+    display: flex;
+    flex-direction: column;  
+    margin-top:0.5%;
+    margin-left: 0.5%;
+    margin-bottom: 0.5%;
+    gap: 1.5vh;
+}
+.pedido-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1%;
+    margin-left: 0.5%;
+    margin-bottom: 0.5%;
+    gap: 1.5vh;
+
+}
+.pedido-total{
+    color: var(--Textopedidototal);
+}
+.pedido-header{
+    display: flex;
+}
+
+.pedido-separador{
+    width: 99%;
+    margin: 1.5rem auto;
+}

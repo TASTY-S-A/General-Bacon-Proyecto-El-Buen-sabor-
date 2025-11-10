@@ -1,0 +1,129 @@
+
+/* FONDOS GENERALES */
+
+body{
+    background: var(--backgeneral);
+}
+
+.mainhead{
+     background: var(--headergeneral)
+}
+
+
+.container {
+     display: flex;
+  height: calc(100vh - 77px);
+
+}
+
+.pcont {
+overflow-y: auto;
+}
+/*  LOGO Y TITULO */
+
+.lhead{
+    display: flex;
+    align-items: center;
+    gap: 2% ;
+}
+
+.texthead{
+    font-family: "Alumni Sans Inline One", sans-serif;
+     font-style: italic;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.logo{
+  width: 8%;  
+  height: auto;
+  margin-left: 2%;
+}
+
+/* ELEMENTOS DE NAVEGACION DEL TOP */
+
+.navbar{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+.navbar-top{
+    display: flex;
+    margin-right: 1.5%;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+
+}
+
+.navbar-top a {
+    font-size: 1.125rem;
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+     text-decoration: none;  
+    color: inherit;  
+}
+
+.logoutbutton{
+  background-color: var(--buttoncolor);
+  border-radius: 17px;
+  border: 1px solid rgb(0, 0, 0,0.3);
+  box-shadow: 4px 5px 2px 0px rgb(0, 0, 0,0.28);
+  cursor: pointer;
+  width: 9rem;
+  padding: 0.7rem;
+  font-family: "Gugi", sans-serif;
+  font-weight: 700;
+  text-decoration: none;  
+  color: inherit; 
+}
+
+/* ELEMENTOS DE NAVEGACION EN EL LEFT */
+
+.navbuttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    margin-top: 20%;
+}
+
+.navbuttons a{
+        display: flex;
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+     text-decoration: none;  
+    color: white;  
+    font-size: larger;
+    justify-content: center;
+
+}
+
+.globalnavs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.navbar-left{
+    background: var(--leftbar);
+    width: 12%;
+    
+}
+
+.navbuttombot{
+        display: flex;
+    font-family: "Gugi", sans-serif;
+    font-weight: 400;
+     text-decoration: none;  
+    color: white;  
+    font-size: larger;
+    justify-content: center;
+
+    
+}
