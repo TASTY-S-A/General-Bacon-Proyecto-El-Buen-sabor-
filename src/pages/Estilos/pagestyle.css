@@ -6,14 +6,15 @@ body{
 }
 
 .mainhead{
-     background: var(--headergeneral)
+    background: var(--headergeneral);
+    
 }
 
 
 .container {
      display: flex;
-  height: calc(100vh - 77px);
-
+     margin-top: v);
+        height: 100%;
 }
 
 .pcont {
@@ -30,41 +31,43 @@ overflow-y: auto;
 .texthead{
     font-family: "Alumni Sans Inline One", sans-serif;
      font-style: italic;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 300;
 }
 
 .logo{
-  width: 8%;  
+  width: var(--tamanioheader);
   height: auto;
   margin-left: 2%;
+  margin: 0.3%;
 }
 
 /* ELEMENTOS DE NAVEGACION DEL TOP */
 
 .navbar{
     display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 
 
 .navbar-top{
     display: flex;
-    margin-right: 1.5%;
+    margin-right: auto;
+    padding: 0 1%;
     justify-content: space-between;
     align-items: center;
-    width: 25%;
-
+    gap: 1%;
+    width: 40%;
 }
 
 .navbar-top a {
     font-size: 1.125rem;
     font-family: "Gugi", sans-serif;
     font-weight: 400;
-     text-decoration: none;  
+    text-decoration: none;  
     color: inherit;  
 }
 
@@ -88,7 +91,7 @@ overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 50%;
+    height: 40%;
     margin-top: 20%;
 }
 
@@ -103,20 +106,21 @@ overflow-y: auto;
 
 }
 
-.globalnavs{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-
 .navbar-left{
     background: var(--leftbar);
-    width: 12%;
-    
+    width: 15%;
+    position: relative;
 }
 
-.navbuttombot{
+
+.separadordebotones{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+/* botones left que ven todo */
+
+.navbuttombot a{
         display: flex;
     font-family: "Gugi", sans-serif;
     font-weight: 400;
@@ -124,6 +128,20 @@ overflow-y: auto;
     color: white;  
     font-size: larger;
     justify-content: center;
+}
 
-    
+.navbuttombot{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15%;
+}
+
+.activo{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgb(255, 255, 255, 0.5);
+    height: 3rem;
 }

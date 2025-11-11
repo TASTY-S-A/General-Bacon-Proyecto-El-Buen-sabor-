@@ -14,10 +14,10 @@
     --backtarjetaPedido: #FFEDEB;
     --botonestodopedido: #FE8C78;
     --Textopedidototal: #EE5007;
+    --tamanioheader: 100px;
+  }
+
+html,body,main {
+  height: 100%;
 }
 
-html,body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}

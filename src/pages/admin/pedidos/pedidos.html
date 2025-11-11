@@ -12,39 +12,37 @@
 
 </head>
 <body>
+  <header class = mainhead>
+    <nav class="navbar">
+      <div class="lhead">
+        <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+        <h1 class="texthead">Capitán Bacon</h1>
+      </div>
+      <div class="navbar-top">
+        <a href="../pedidos/pedidos.html" class="nav-btn pAd" id="AdminPanel">Panel Admin</a>
+        <a href="../../store/home/home.html" class="nav-btn cat">Tienda</a>
+        <a href="../productos/productos.html" class="nav-btn pro" id="Logout">-</a>
+        <button id="button_logout" class="logoutbutton">Cerrar Sesion</button>
+      </div>
+    </nav>
+  </header>
+  
   <main>
-    <header class = mainhead>
-        <nav class="navbar">
-            <div class="lhead">
-                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
-                <h1 class="texthead">Capitán Bacon</h1>
-            </div>
-            <div class="navbar-top">
-                <a href="../pedidos/pedidos.html" class="nav-btn pAd" id="AdminPanel">Panel Admin</a>
-                <a href="../../store/home/home.html" class="nav-btn cat">Tienda</a>
-                <a href="../productos/productos.html" class="nav-btn pro" id="Logout">-</a>
-                <button id="button_logout" class="logoutbutton">Cerrar Sesion</button>
-            </div>
-        </nav>
-    </header>
-
     <section class="container"> 
       <aside class="navbar-left">
         <ul class="navbuttons">
           <li><a href="../Dashbord/Dashbord.html">DASHBORD</a></li>
-          <li><a href="../pedidos/pedidos.html" class="active">PEDIDOS</a></li>
+          <li><a class="activo" href="../pedidos/pedidos.html" class="active">PEDIDOS</a></li>
           <li><a href="../categorias/categorias.html">CATEGORIAS</a></li>
           <li><a href="../productos/productos.html">PRODUCTOS</a></li>
           </ul>
             <hr class="separadordebotones">
             <ul class="navbuttombot">
-            <section class="globalnavs">
+   
                   <li><a class="tiendaboton" href="">VER TIENDA</a></li>
-                   <li><a class="carritoboton" href="">CARRITO</a></li>
-              </section>
+                  <li><a class="carritoboton" class="buttcarrito" href="">CARRITO</a></li>
+        
             </ul>  
-      
- 
       </aside>
 
 
