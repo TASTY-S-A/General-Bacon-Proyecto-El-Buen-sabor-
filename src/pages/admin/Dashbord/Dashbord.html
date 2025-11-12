@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashbord</title>
+ <link rel="stylesheet" href="/src/pages/Estilos/variablesglobales.css">
+  <link rel="stylesheet" href="/src/pages/Estilos/pagestyle.css">
+  <link rel="stylesheet" href="/src/pages/Estilos/pedidos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    
+  <header class="main-head">
+    <nav class="nav-top">
+      <div class="box-headL">
+        <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+        <h1 class="header-title">Capitán Bacon</h1>
+      </div>
+      <div class="navbar-top">
+        <a href="../Dashbord/Dashbord.html" class="nav-btn pAd" id="AdminPanel">Panel Admin</a>
+        <a href="../../store/home/home.html" class="nav-btn cat">Tienda</a>
+        <a href="../productos/productos.html" class="nav-btn pro" id="Logout">-</a>
+        <button id="button_logout" class="logoutbutton">Cerrar Sesion</button>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="container"> 
+      <aside class="navbar-left">
+        <ul class="left-buttons">
+          <li><a  class="activo" href="../Dashbord/Dashbord.html">DASHBORD</a></li>
+          <li><a class="noactivo" href="../pedidos/pedidos.html">PEDIDOS</a></li>
+          <li><a class="noactivo" href="../categorias/categorias.html" >CATEGORIAS</a></li>
+          <li><a  class="noactivo" href="../productos/productos.html">PRODUCTOS</a></li>
+          </ul>
+            <hr class="separadordebotones">
+            <ul class="left-buttons-footer">
+   
+                  <li><a class="tiendaboton" href="">VER TIENDA</a></li>
+                  <li><a class="carritoboton" class="buttcarrito" href="">CARRITO</a></li>
+        
+            </ul>  
+      </aside>
+       <section class="main-content">
+         <h2>Panel de administración</h2>
+       </section>
+    </main>
 </body>
 </html>

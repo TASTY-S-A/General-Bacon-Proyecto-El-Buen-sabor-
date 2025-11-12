@@ -4,34 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>categorias | Admin</title>
-  <link rel="stylesheet" href="../home/home.css">
+ <link rel="stylesheet" href="/src/pages/Estilos/variablesglobales.css">
+  <link rel="stylesheet" href="/src/pages/Estilos/pagestyle.css">
+  <link rel="stylesheet" href="/src/pages/Estilos/pedidos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-left">
-                <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
-                <h1>Capitán Bacon</h1>
-            </div>
-            <div class="navbar-right">
-                <a href="../pedidos/pedidos.html" class="nav-btn pAd">Panel de Administracion</a>
-                <a href="../../store/home/home.html" class="nav-btn cat">Tienda</a>
-                <a href="../productos/productos.html" class="nav-btn pro" id="Logout">-</a>
-                <button id="button_logout" class="btn-logout">Logout</button>
-            </div>
-        </nav>
-    </header>
-
-  <div class="container">
-    <aside class="sidebar">
-      <ul>
-        <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
-        <li><a href="../categorias/categorias.html" class="active">Categorías</a></li>
-        <li><a href="../productos/productos.html">Productos</a></li>
-      </ul>
-    </aside>
-
-    <main>
+  <header class="main-head">
+    <nav class="nav-top">
+      <div class="box-headL">
+        <img class="logo" src="../../../templates/logo/logo_negro.svg" alt="Logo de Capitán Bacon" width="60">
+        <h1 class="header-title">Capitán Bacon</h1>
+      </div>
+      <div class="navbar-top">
+        <a href="../Dashbord/Dashbord.html" class="nav-btn pAd" id="AdminPanel">Panel Admin</a>
+        <a href="../../store/home/home.html" class="nav-btn cat">Tienda</a>
+        <a href="../productos/productos.html" class="nav-btn pro" id="Logout">-</a>
+        <button id="button_logout" class="logoutbutton">Cerrar Sesion</button>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="container"> 
+      <aside class="navbar-left">
+        <ul class="left-buttons">
+          <li><a  class="noactivo" href="../Dashbord/Dashbord.html">DASHBORD</a></li>
+          <li><a class="noactivo" href="../pedidos/pedidos.html">PEDIDOS</a></li>
+          <li><a class="activo" href="../categorias/categorias.html" >CATEGORIAS</a></li>
+          <li><a class="noactivo"  href="../productos/productos.html">PRODUCTOS</a></li>
+          </ul>
+            <hr class="separadordebotones">
+            <ul class="left-buttons-footer">
+   
+                  <li><a class="tiendaboton" href="">VER TIENDA</a></li>
+                  <li><a class="carritoboton" class="buttcarrito" href="">CARRITO</a></li>
+        
+            </ul>  
+      </aside>
+    
+      <section class="main-content">
       <h2>Gestión de Categorias</h2>
       <p>Aquí podés ver, editar o eliminar categorias.</p>
         <!-- Botón para abrir el form -->
@@ -72,7 +86,8 @@
             
           </tbody>
         </table>
-
+          </section>
+        </section>
       </main>
       <script type="module" src="./categoria.ts"></script>
 </body>
