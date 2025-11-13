@@ -18,7 +18,7 @@ export const inicioSesion = (userData: IUser) => {
     .then((data) => {
       localStorage.setItem('userData', JSON.stringify(data));
       if(data.rol === "ADMIN"){
-        navigate("/src/pages/admin/home/home.html");
+        navigate("/src/pages/admin/Dashbord/Dashbord.html");
       }else{
         navigate("/src/pages/store/home/home.html");
       } 
