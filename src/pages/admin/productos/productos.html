@@ -6,7 +6,7 @@
   <title>Productos | Admin</title>
   <link rel="stylesheet" href="/src/pages/Estilos/variablesglobales.css">
   <link rel="stylesheet" href="/src/pages/Estilos/pagestyle.css">
-  <link rel="stylesheet" href="/src/pages/Estilos/pedidos.css">
+  <link rel="stylesheet" href="/src/pages/Estilos/Productos.css">
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 
@@ -45,17 +45,21 @@
             </ul>  
         </aside>
   
-     
-      <h2>Gestión de Productos</h2>
-      <p>Aquí podés ver, editar o eliminar productos.</p>
-          <!-- Botón para abrir el formulario -->
+     <section class="cajapapi">
+        <div class="encabezado">
+          <article class="textocabeza">
+          <h2>Gestión de Productos</h2>
+          <p>Aquí podés ver, editar o eliminar productos.</p>
+          </article>
           <button id="btnAbrirFormulario" class="btnAbrirFormProd">+ Nuevo Producto</button>
+        </div>
       <!-- Fondo semitransparente -->
       <div id="fondoModal" class="overlay">
         <!-- Contenedor del formulario/modal -->
         <form id="formularioProducto" class="modal">
-          <span id="btnCerrarFormulario" class="cerrar">&times;</span>
+          <span id="btnCerrarFormulario" class="close">&times;</span>
           <h2>Nueva Producto</h2>
+          <div class="contenidotarjeta">
           <div class="campo-formulario">
             <label for="nombre">Nombre</label>
             <input id="nombre" class="box" name="nombre" type="text" placeholder="Ingrese el nombre" required>
@@ -72,13 +76,15 @@
             <label for="imagenUrl">URL de Imagen</label>
             <input id="imagenUrl" class="box" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
           </div>
-          <div class="campo-formulario">
+          <div class="radio">
             <div id="categoriasContainer">
-              <label>Categorías:</label>
+              <label class="titulo">Categorías:</label>
               <div id="categoriasCheckboxes"></div>
             </div>
+            
           </div>
-          <button type="submit" class="guardarCBtn btnAbrirFormProd">Guardar</button>
+          <button type="submit" class="guardarCBtn ">Guardar</button>
+         </div>
         </form>
       </div>
 
@@ -99,6 +105,7 @@
         </table>
       </aside>
     </aside>
+    </section>
   </main>
   
 <script type="module" src="./producto.ts"></script>
