@@ -21,14 +21,23 @@
 }
 .encabezado button{
   background-color: #699A03;
-  width: 16%;
+  width: 16rem;
   height: 3rem;
   border-radius: 1rem;
   margin-left: auto;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
   color: white;
   font-size: 1.5rem;
   font-weight: 700;
-  margin-right: 2rem;
+  margin-right: 4rem;
+  margin-top: 1rem;
+    transition-duration: 300ms;
+}
+.btnAbrirFormCat:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 2px 2px rgba(0, 240, 72, 0.3);
 }
 .overlay {
   display: none; 
@@ -131,9 +140,75 @@
 }
 
 #tablaCategorias{
-  display: flex;
+  display: flex;  
   margin: auto;
+  flex-direction: column;
   margin-top: 6rem;
-  background: red;
   width: 90%;
+  height: 50%;
+  
+}
+
+thead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5rem;
+  height: 3rem;
+}
+.nom th{
+  margin-right: 1.5rem;
+}
+.nom{
+  background-color: #782402;
+  color: white;
+   height: 5rem;
+ display: flex;
+ width: 100%;
+justify-content: space-between;
+ border: 0px solid ;
+ border-radius: 1rem 1rem 0 0;
+}
+tr{
+padding: 1rem 2rem;
+ display: flex;
+ width: 100%;
+ justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+font-size: 1.3rem;
+
+}
+td{
+  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  max-width: 2rem;
+}
+
+tbody{
+  background-color: #FFC6BF;
+  border-radius: 0 0 1rem 1rem;
+}
+.botoness{
+  margin-right: 4rem;
+}
+tbody button{
+  display: flex;
+  justify-content: start;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.nombrecat{
+  margin-left: -0.5rem;
+}
+
+.nombreee{
+  margin-left: 1rem;
+}
+.img_card-cat{
+margin-left: 2rem;
 }
