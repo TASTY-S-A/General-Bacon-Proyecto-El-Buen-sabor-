@@ -17,24 +17,29 @@ export const verPedidos = async () => {
   }
 };
 
-export const cambiarEstado = async (pedido: { id: any; estado: any; }) => {
-    try{
-      const response = await fetch(`${API_URL}/pedidos/actualizar/${pedido.id}`, {
-      method: 'PACTH',
+export const cambiarEstado = async (id: any, estado: any) => {
+  try {
+    const response = await fetch(`${API_URL}/pedidos/actualizar/${id}`, {
+      method: 'PUT',
       headers: {
-      'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(pedido.estado),
+      body: JSON.stringify({ estado }), 
     });
+
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
-    return;
-    }catch (error){
-    console.error('❌ Error al eliminar el producto:', error);
+
+    const data = await response.json();
+    return data;
+
+  } catch (error) { 
+    console.error('Error al actualizar el pedido:', error);
     throw error;
-    }
-}
+  }
+};
+
 
 export const crearPedido = async (pedido: any) => { 
   try {
@@ -62,4 +67,17 @@ export const crearPedido = async (pedido: any) => {
   }
 };
 
-
+export const verPedidosId = async (id: string) => {
+  try {
+    const response = await fetch(`${API_URL}/pedidos/${id}`);
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  }
+  catch (error) {
+    console.error('❌ Error al obtener el producto:', error);
+    throw error;
+  }
+};

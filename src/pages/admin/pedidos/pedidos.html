@@ -43,15 +43,42 @@
         
             </ul>  
       </aside>
-
-
-
   <article class="main-content">
         <h2 class="titleGP">Gestión de Pedidos</h2>
         <p class="descrpGP">Aquí podés ver, editar o eliminar pedidos.</p>
        <div id="contenedorPedidos" class="pedidotarjeta"></div>
       </article>
     </section>
+
+    <div class="modal-overlay hidden">
+      <div class="modal">
+        <h2>Detalle del Pedido</h2>
+
+        <div class="modal-body">
+          <p><strong>ID Pedido:</strong> <span id="pedido-id"></span></p>
+          <p><strong>Cliente:</strong> <span id="pedido-cliente"></span></p>
+          <p><strong>Fecha:</strong> <span id="pedido-fecha"></span></p>
+
+          <h3>Productos</h3>
+          <ul id="pedido-productos"></ul>
+
+          <label for="estado-pedido"><strong>Estado:</strong></label>
+          <select id="estado-pedido">
+            <option value="PENDIENTE">Pendiente</option>
+            <option value="CONFIRMADO">Confirmado</option>
+            <option value="CANCELADO">Cancelado</option>
+            <option value="TERMINADO">Terminado</option>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button id="guardar-estado" class="btn-primary">Guardar</button>
+          <button id="cerrar-modal" class="btn-secondary">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+
   </main>
   <script type="module" src="./pedidos.ts"></script>
 </body>

@@ -5,9 +5,11 @@ import { crearCategoria, EliminarCategoria, verCategorias } from "./categoriaApi
 
 
 const Tabla = document.querySelector("#tablaCategorias tbody");
+const modal2 = document.getElementById("fondoModal2") as HTMLDivElement;
 const modal = document.getElementById("fondoModal");
 const abrirBtn = document.getElementById("btnAbrirFormulario");
 const cerrarBtn = document.getElementById("btnCerrarFormulario");
+const categoriaFormActualizar = document.getElementById("categoriaFormActualizar") as HTMLFormElement;
 const categoriaForm = document.getElementById("categoriaForm") as HTMLFormElement;
 const nombreInput = document.getElementById("nombre") as HTMLInputElement;
 const descripcionInput = document.getElementById("descripcion") as HTMLInputElement;
@@ -33,6 +35,8 @@ if (modal && abrirBtn && cerrarBtn) {  //ventana
   };
 }
 
+
+
 categoriaForm.addEventListener("submit", async (e: SubmitEvent) => {  
   e.preventDefault();
 
@@ -57,16 +61,19 @@ categoriaForm.addEventListener("submit", async (e: SubmitEvent) => {
 
 Tabla?.addEventListener("click", async (e) => { // Boton en la Tabla
   const target = e.target as HTMLElement;
-
-  if (target.classList.contains("eliminarbtn")) {
-  const id = target.dataset.id;
+    const id = target.dataset.id;
   if (!id) {
     console.warn("⚠️ El botón no tiene data-id.");
     return;
   } 
+  if (target.classList.contains("eliminarbtn")) {
   await EliminarCategoria(id);
   await llenarTablaCategorias();
+  } else if (target.classList.contains("editarbtn")) {
+  alert("Editar");
+  modal2.style.display = "flex";
   }
+
 });
 
 export const llenarTablaCategorias = async () => {
@@ -110,20 +117,6 @@ const data = localStorage.getItem("userData");
 window.addEventListener("DOMContentLoaded", btnlogout);
 
 buttonLogout.addEventListener("click", () => {logoutUser();});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const gridProductos = document.querySelector(".categoriass") as HTMLDivElement;
-  gridProductos.addEventListener("click", (e) => {
-  const target = e.target as HTMLElement;
-  const tarjeta = target.closest(".editarbtn") as HTMLElement;
-  if (tarjeta) {
-    const id = tarjeta.dataset.id;
-    if (id) {
-      modal.style.display = "flex"
-    }
-  }
-  });
-});
 
 llenarTablaCategorias();
 
