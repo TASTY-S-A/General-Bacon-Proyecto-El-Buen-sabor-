@@ -1,6 +1,6 @@
 import type { Producto } from "../../../types/Productos";
 import { verCategorias } from "../categorias/categoriaApi";
-import { crearProducto, EliminarProducto, verProductos } from "./productoApi";
+import { cambiarStock, crearProducto, EliminarProducto, verProductos } from "./productoApi";
 
 
 import { logoutUser } from "../../../utils/localStorage";
@@ -17,9 +17,6 @@ const precioInput = document.getElementById("precio") as HTMLInputElement;
 const imagenUrl = document.getElementById("imagenUrl") as HTMLInputElement;
 const stockInput = document.getElementById("stock") as HTMLInputElement;
 const contenedorCategorias = document.getElementById("categoriasCheckboxes");
-const btnMas = document.querySelector(".pedido-button-mas") as HTMLButtonElement;
-const btnMenos = document.querySelector(".pedido-button-menos") as HTMLButtonElement;
-let stock = 0;
 
 export const btnlogout = async () => {
 const data = localStorage.getItem("userData");
@@ -37,20 +34,20 @@ window.addEventListener("DOMContentLoaded", btnlogout);
 buttonLogout.addEventListener("click", () => {logoutUser();});
 
 if (modal && abrirBtn && cerrarBtn) {
-  abrirBtn.onclick = async () => { //Abrir ventana
+  abrirBtn.onclick = async () => { 
   modal.style.display = "flex";
   await renderizarCategorias();
 };
 
-  cerrarBtn.onclick = () => { //Cerrar ventana
+  cerrarBtn.onclick = () => { 
     modal.style.display = "none";
-    llenarTablaProductos(); // recarga la tabla al cerrar el modal
+    llenarTablaProductos(); 
   };
 
-  window.onclick = (e) => { //Cerrar ventana al hacer clic fuera
+  window.onclick = (e) => { 
     if (e.target === modal) {
       modal.style.display = "none";
-      llenarTablaProductos(); // También recarga la tabla si hacen clic afuera
+      llenarTablaProductos(); 
     }
   };
 }
@@ -89,12 +86,11 @@ const llenarTablaProductos = async () => {
 
     productos.forEach((p: Producto) => {
       const fila = document.createElement("tr");
-      const stock = p.stock !== 0 ? "SI" : "NO";
       fila.innerHTML = `
         <td class="texto_card-cat">${p.id}</td>
         <td class="texto_card-cat">${p.nombre}</td>
         <td class="texto_card-cat">${p.precio}</td>
-        <td class="texto_card-cat">${stock}</td>
+        <td class="texto_card-cat">${p.stock}</td>
         <td class="texto_card-cat">${p.categoria?.nombre}</td>
         <td class="texto_card-cat"><img src="${p.imagen}" alt="${p.nombre}" width="80" height="80" style="object-fit: cover; border-radius: 8px;"></td>
         <td><button class="eliminarbtn btn_card-cat texto_card-cat" data-id="${p.id}">Eliminar</button></td>
@@ -108,20 +104,24 @@ const llenarTablaProductos = async () => {
   }
 };
 
-
-Tabla?.addEventListener("click", async (e) => { // Boton de eliminar en la Tabla
-  const target = e.target as HTMLElement;
-
-  if (target.classList.contains("eliminarbtn")) {
+Tabla?.addEventListener("click", async (e) => {
+  const target = (e.target as HTMLElement).closest("button");
+  if (!target) return;
   const id = target.dataset.id;
   if (!id) {
-    console.warn("⚠️ El botón no tiene data-id.");
+    alert("⚠️ El botón no tiene data-id.");
     return;
-  } 
-  await EliminarProducto(id);
-  await llenarTablaProductos();
   }
+  if (target.classList.contains("eliminarbtn")) {
+    await EliminarProducto(id);
+  } else if (target.classList.contains("sumarbtn")) {
+    await cambiarStock(id, 1);
+  }else if (target.classList.contains("restarbtn")) {
+    await cambiarStock(id, -1);
+  }
+  await llenarTablaProductos();
 });
+
 
 //categorias en formulario de productos
 const renderizarCategorias = async () => {

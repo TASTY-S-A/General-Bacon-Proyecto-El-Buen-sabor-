@@ -52,3 +52,24 @@ export const EliminarCategoria = async (id: string) => {
     throw error;
   }
 };
+
+export const actualizarCategoria = async (CategoriaData: {
+}) => {
+  try {
+    const response = await fetch(`${API_URL}/categoria`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(CategoriaData),
+    });
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+    const data = await response.json(); 
+    return data;
+  } catch (error) {
+    console.error(' Error al actualizar categoria:', error);
+    throw error;
+  }
+};

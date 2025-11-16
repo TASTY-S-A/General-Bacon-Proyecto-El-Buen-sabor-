@@ -1,3 +1,5 @@
+import { cambiarStock } from "../productos/productoApi";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const verPedidos = async () => {
@@ -44,12 +46,20 @@ export const crearPedido = async (pedido: any) => {
       body: JSON.stringify(pedido),
     });
     if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
+      alert("No hay suficiente stock");
+      throw new Error(`No hay suficiente stock`);
+    }
+    const listaProductos = [];
+    for (const producto of pedido.productos) {
+      await cambiarStock(producto.id, -producto.cantidad);
+      listaProductos.push(producto.id);
     }
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('❌ Error al crear el Producto:', error);
+    console.error('Error al crear el Pedido:', error);
     throw error;
   }
 };
+
+

@@ -112,7 +112,7 @@ window.addEventListener("DOMContentLoaded", btnlogout);
 buttonLogout.addEventListener("click", () => {logoutUser();});
 
 document.addEventListener("DOMContentLoaded", () => {
-  const gridProductos = document.querySelector(".botoness") as HTMLDivElement;
+  const gridProductos = document.querySelector(".categoriass") as HTMLDivElement;
   gridProductos.addEventListener("click", (e) => {
   const target = e.target as HTMLElement;
   const tarjeta = target.closest(".editarbtn") as HTMLElement;

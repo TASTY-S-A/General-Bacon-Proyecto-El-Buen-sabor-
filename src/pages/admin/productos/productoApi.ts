@@ -85,22 +85,18 @@ export const obtenerProductoPorId = async (id: string) => {
   }
 }
 
-export const sumarStock = async (id: string, stock: number) => {
+export const cambiarStock = async (id: string, stock: number) => {
   try {
-    const response = await fetch(`${API_URL}/productos/${id}`, {
+    const response = await fetch(`${API_URL}/productos/cambiarStock/${id}/${stock}`, {
       method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ stock }),
     });
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
-    return;
-  }
-  catch (error) {
+    if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
+
+    const productoActualizado = await response.json(); // capturamos lo que devuelve el backend
+    return productoActualizado;
+  } catch (error) {
     console.error('❌ Error al actualizar el stock:', error);
     throw error;
   }
-}
+};
+
