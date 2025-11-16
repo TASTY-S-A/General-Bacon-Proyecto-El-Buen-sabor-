@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (tarjeta) {
     const id = tarjeta.dataset.id;
     if (id) {
-      alert("funciona");
+      modal.style.display = "flex"
     }
   }
   });

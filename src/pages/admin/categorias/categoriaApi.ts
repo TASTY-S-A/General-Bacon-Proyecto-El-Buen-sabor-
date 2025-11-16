@@ -56,7 +56,7 @@ export const EliminarCategoria = async (id: string) => {
 export const actualizarCategoria = async (CategoriaData: {
 }) => {
   try {
-    const response = await fetch(`${API_URL}/categoria`, {
+    const response = await fetch(`${API_URL}/categoria/${CategoriaData.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

@@ -200,8 +200,15 @@ tbody button{
   justify-content: start;
   margin-left: 1rem;
   padding: 1rem;
-}
 
+}
+.editarbtn{
+background-color: #B7AEA2;
+}
+.eliminarbtn{
+background-color: #98421F;
+color: white;
+}
 .nombrecat{
   margin-left: -0.5rem;
 }
