@@ -6,7 +6,7 @@
   <title>categorias | Admin</title>
  <link rel="stylesheet" href="/src/pages/Estilos/variablesglobales.css">
   <link rel="stylesheet" href="/src/pages/Estilos/pagestyle.css">
-  <link rel="stylesheet" href="/src/pages/Estilos/pedidos.css">
+  <link rel="stylesheet" href="/src/pages/Estilos/Categoria.css">
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 
@@ -46,16 +46,20 @@
       </aside>
     
       <section class="main-content">
-      <h2>Gestión de Categorias</h2>
-      <p>Aquí podés ver, editar o eliminar categorias.</p>
-        <!-- Botón para abrir el form -->
+        <div class="encabezado">
+        <section class="texto">
+        <h2>Gestión de Categorias</h2>
+        <p>Aquí podés ver, editar o eliminar categorias.</p>
+        </section>
         <button id="btnAbrirFormulario" class="btnAbrirFormCat">+ Nueva Categoría</button>
+        </div>
         <!-- Fondo semitransparente -->
         <div id="fondoModal" class="overlay">
         <!-- Contenedor del form -->
         <form id="categoriaForm" class="modal">
           <span id="btnCerrarFormulario" class="close">&times;</span>
           <h2>Nueva Categoría</h2>
+          <div class="contenidotarjeta">
           <div class="form-group">
             <label for="nombre">Nombre</label>
             <input id="nombre" class="box" name="nombre" type="text" placeholder="Ingrese el nombre" required>
@@ -68,7 +72,9 @@
             <label for="imagenUrl">URL de Imagen</label>
             <input id="imagenUrl" class="box" name="imagenUrl" type="url" placeholder="https://ejemplo.com/imagen.jpg" required>
           </div>
-          <button type="submit" class="guardarCBtn btnAbrirFormCat">Guardar</button>
+         
+          <button type="submit" class="guardarCBtn">Guardar</button>
+         </div>
         </form>
         </div>
           <!-- Tabla de categorias -->
